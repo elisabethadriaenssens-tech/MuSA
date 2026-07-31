@@ -10,12 +10,14 @@ author: Lucas Boeykens - lucas.boeykens@ugent.be lucas.boeykens@kuleuven.be
 #--- inputs ---
 cluster=${1:-"skiddo"}
 modelOnlySites=${2:-True}
-remove_output_cells=${3:-True}
-date_ini=${4:-"2015-09-01 00:00"}
-date_end=${5:-"2024-08-31 23:00"}
-rootdirMuSAruns=${6:-"/kyukon/data/gent/vo/000/gvo00090/vsc44965/Doctoraat/Python/Machine_learning/Traditional_MLA/sd/MuSA/DATA/"}
+date_ini=${3:-"2015-09-01 00:00"}
+date_end=${4:-"2024-08-31 23:00"}
+rootdirMuSAruns=${5:-"/kyukon/data/gent/vo/000/gvo00090/vsc44965/Doctoraat/Python/Machine_learning/Traditional_MLA/sd/MuSA/DATA/"}
+remove_output_cells=${6:-True}
 
 # -- hard coded ---
+store_measurements="/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc"
+
 tiledir="/kyukon/data/gent/vo/000/gvo00090/vsc44965/\
 Doctoraat/SNOWSHOP/Tile_lists/"
 
@@ -30,6 +32,9 @@ if [ "$modelOnlySites" == "True" ]; then
 else
     time="12:00:00"
 fi
+
+# find the file with the tiles
+tilefile=$(find $tiledir -name "${region}_*.txt" | head -n 1)
 
 
 #--- submit the jobs ---
@@ -48,9 +53,11 @@ job=$(sbatch --job-name=MuSArun_Alps \
   --array=0-$((ntiles-1)) \
   --wrap="$submitJobsScript \${SLURM_ARRAY_TASK_ID} \
                         $rootdirMuSAruns \
-                        $date_ini \
-                        $date_end \
+                        \"$date_ini\" \
+                        \"$date_end\" \
                         $modelOnlySites \
-                        $remove_output_cells"
+                        $remove_output_cells \
+                        $store_measurements \
+                        $tilefile"
                         )
 

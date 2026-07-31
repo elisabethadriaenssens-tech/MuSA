@@ -264,7 +264,8 @@ def adjust_config_file(
         nprocess:int=len(os.sched_getaffinity(0)),
         nprocess_min:int=8,
         model_only_sites:bool=False,
-        remove_output_cells:bool=False
+        remove_output_cells:bool=False,
+        store_measurements:str="/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc"
     ) -> str:
     ''' 
     Function that changes the config file based on the input arguments. 
@@ -346,7 +347,8 @@ def adjust_config_file(
     if model_only_sites:
         _CreateMaskMsitesTile(
             tx=int(re.search(r"x(\d+)", rootdirRun).group(1)),
-            ty=int(re.search(r"y(\d+)", rootdirRun).group(1))
+            ty=int(re.search(r"y(\d+)", rootdirRun).group(1)),
+            store_measurements=store_measurements
         )
     else:
         cfg.nc_maks_path=None
@@ -376,6 +378,7 @@ def CreateDirectoriesMuSArunTile(
 
     #make the necessary directories for the run of MuSA for the specific tile (tx,ty) -> forcings and DEM currently
     rootdirRun=os.path.join(rootdirMuSAruns,tile_str)
+    os.makedirs(rootdirRun,exist_ok=True)
 
     dem_dir=os.path.join(rootdirRun,"DEM")
     os.makedirs(dem_dir,exist_ok=True)

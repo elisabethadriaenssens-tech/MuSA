@@ -99,6 +99,11 @@ def parse_arguments() -> argparse.Namespace:
                         type=str2bool,
                         default=False,
                         help="Flag to indicate if output cells should be removed after the run (default: False)")
+
+    parser.add_argument("--store_measurements",
+                        type=str,
+                        default="/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc",
+                        help="Path to xr dataset containing the in situ measurements") 
     
     args = parser.parse_args()
     
@@ -119,6 +124,7 @@ class PrepareRunTile:
         implementation: str, implementation type (e.g., "open_loop").
         model_only_sites: bool, flag to indicate if only model sites should be considered.
         remove_output_cells: bool, flag to indicate if output cells should be removed after the run
+        store_measurements: str, path to xr dataset containing the in situ measurements (default: "/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc")
 
     Returns:
         str, path to the adjusted config file
@@ -132,7 +138,8 @@ class PrepareRunTile:
                  snow_model:str, 
                  implementation:str, 
                  model_only_sites:bool,
-                 remove_output_cells:bool
+                 remove_output_cells:bool,
+                 store_measurements:str
                  ):
         self.tx=tx
         self.ty=ty
@@ -143,6 +150,7 @@ class PrepareRunTile:
         self.implementation=implementation
         self.model_only_sites=model_only_sites
         self.remove_output_cells=remove_output_cells
+        self.store_measurements=store_measurements
 
     def runPreprocessing(self) -> str:
         ''' 
@@ -189,7 +197,8 @@ class PrepareRunTile:
                 date_end=self.date_end,
                 implementation=self.implementation,
                 model_only_sites=self.model_only_sites,
-                remove_output_cells=self.remove_output_cells
+                remove_output_cells=self.remove_output_cells,
+                store_measurements=self.store_measurements
             )
         print("Preprocessing complete!", file=sys.stderr)
 
