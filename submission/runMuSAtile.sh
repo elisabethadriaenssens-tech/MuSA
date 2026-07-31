@@ -22,6 +22,8 @@ date_ini=${3:-"2015-09-01 00:00"}
 date_end=${4:-"2015-09-30 23:00"}
 model_only_sites=${5:-True}
 remove_output_cells=${6:-False}
+store_measurements=${7:-"/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc"}
+tilefile=${8:-"/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/auxdata/mountain_tiles/Alps_tiles.txt"}
 
 #--- hard coded paths ---
 ROOTDIR=$(git -C "$(dirname "${BASH_SOURCE[0]}")" rev-parse --show-toplevel)
@@ -33,13 +35,15 @@ cfg_path=$($pythonpath $ROOTDIR/preprocessMuSArunTile.py --date_ini "$date_ini" 
                                             --date_end "$date_end" \
                                             --rootdirMuSAruns "$rootdirMuSAruns" \
                                             --model_only_sites "$model_only_sites" \
+                                            --tilefile "$tilefile" \
                                             --idx_tile "$idx_run" \
-                                            --remove_output_cells "$remove_output_cells"
+                                            --remove_output_cells "$remove_output_cells" \
+                                            --store_measurements "$store_measurements"
                                             )
 
 # #--- run MuSA --- -> also exports the results to another format
 # export MUSA_CONFIG=$cfg_path
 # ${pythonpath} runMuSAtile.py 
 
-# #--- remove the config file after the run ---
-# rm -f $cfg_path
+#--- remove the config file after the run ---
+rm -f $cfg_path
