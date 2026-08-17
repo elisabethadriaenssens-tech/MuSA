@@ -142,3 +142,4 @@ DATA/ERRORS
 #all in data
 DATA/*
 test/*.claude/
+.claude/
