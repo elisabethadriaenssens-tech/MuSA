@@ -38,13 +38,17 @@ def load_config(
 
 
 #keys read from the merged base.yml + experiment yml, mapped to the kwarg
-#names expected by PrepareRunTile / pd.read_csv (tilefile)
+#names expected by PrepareRunTile / pd.read_csv (tilefile).
+#Doubles as the REQUIRED_KEYS check in load_experiment_config below.
+#NOTE: "tilefile" and "tiles_source" are not accepted by PrepareRunTile and
+#must be popped from the merged dict before it is passed there (see main()).
 EXPERIMENT_CONFIG_KEYS = {
     "date_ini": "date_ini",
     "date_end": "date_end",
     "runs_root": "rootdirMuSAruns",
     "model_only_sites": "model_only_sites",
     "tilefile": "tilefile",
+    "tiles_source": "tiles_source",
     "remove_output_cells": "remove_output_cells",
     "store_measurements": "store_measurements",
     "implementation": "implementation",
@@ -60,7 +64,9 @@ def load_experiment_config(
     same directory). Experiment-file keys take precedence over base.yml.
 
     Returns a dict keyed by the kwarg names expected by PrepareRunTile
-    (plus "tilefile", used only for the tile lookup in main()).
+    (plus "tilefile" and "tiles_source", which are not accepted by
+    PrepareRunTile and must be popped by the caller before use -- see
+    main() below and helpers/setup_run_dirs.py).
     '''
     base_path = os.path.join(os.path.dirname(experiment_path), "base.yml")
     merged_cfg = {**load_config(base_path), **load_config(experiment_path)}
@@ -206,6 +212,9 @@ def main():
     tiles=pd.read_csv(experiment_cfg.pop("tilefile"),header=0)
     tx=tiles.iloc[args.idx_tile]["tx"]
     ty=tiles.iloc[args.idx_tile]["ty"]
+
+    #tiles_source is only used by helpers/setup_run_dirs.py, not by PrepareRunTile
+    experiment_cfg.pop("tiles_source")
 
     #create an instance of the PrepareRunTile class and run the preprocessing
     prepclass=PrepareRunTile(tx=tx, ty=ty, snow_model=args.snow_model, **experiment_cfg)

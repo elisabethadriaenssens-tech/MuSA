@@ -10,8 +10,9 @@ ensemble_members: 100
 # --- paths ---
 staging_root: /staging/leuven/stg_00024/MSC_TMP/Snowshop
 store_measurements: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MUSA/Alps_dataset_SD.nc
-tilefile: /staging/leuven/stg_00024/MSC_TMP/Snowshop/tile_lists/Alps_tiles.txt
+tilefile: /data/leuven/378/vsc37876/MuSAsummerjob/experiments/tiles_Elisabeth.txt
 dem_root: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MUSA/for_Elisabeth
+tiles_source: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MUSA/Data_MuSAruns_Ghent
 runs_root: /data/leuven/378/vsc37876/MuSAruns_Elisabeth
 
 # --- domain ---
