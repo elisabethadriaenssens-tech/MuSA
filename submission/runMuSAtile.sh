@@ -16,14 +16,14 @@ ml load GCC
 ml load Miniconda3
 
 #--- inputs ---
-idx_run=${1:-19}
-rootdirMuSAruns=${2:-"/kyukon/data/gent/vo/000/gvo00090/vsc44965/Doctoraat/Python/Machine_learning/Traditional_MLA/sd/MuSA/test2/"}
-date_ini=${3:-"2015-09-01 00:00"}
-date_end=${4:-"2015-09-30 23:00"}
-model_only_sites=${5:-True}
-remove_output_cells=${6:-False}
-store_measurements=${7:-"/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc"}
-tilefile=${8:-"/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/auxdata/mountain_tiles/Alps_tiles.txt"}
+idx_run=${1:-19} # which tile handeled 
+rootdirMuSAruns=${2:-"/kyukon/data/gent/vo/000/gvo00090/vsc44965/Doctoraat/Python/Machine_learning/Traditional_MLA/sd/MuSA/test2/"} # location tile folders 
+date_ini=${3:-"2015-09-01 00:00"}  # model windom (should also build zarr file)
+date_end=${4:-"2015-09-30 23:00"} 
+model_only_sites=${5:-True} # sites vs full grid 
+remove_output_cells=${6:-False} # whether to delete per-cell pickles after conversion
+store_measurements=${7:-"/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc"} # is situ SD data 
+tilefile=${8:-"/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/auxdata/mountain_tiles/Alps_tiles.txt"} # tile list 
 
 #--- hard coded paths ---
 ROOTDIR=$(git -C "$(dirname "${BASH_SOURCE[0]}")" rev-parse --show-toplevel)
