@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find / -path \"*ML_pipelines/SD_ML_PRED*\")",
+      "Bash(find / -iname \"PREDICT_SNOW_tile.py*\")",
+      "Bash(python3 -m py_compile preprocessMuSArunTile.py)",
+      "Bash(bash -n submission/runMuSAtile.sh)",
+      "Bash([ -x \"$PY\" ])",
+      "Bash(/data/leuven/378/vsc37876/conda/envs/MuSAenv/bin/python -c ' *)",
+      "Bash(/usr/bin/python3 *)"
+    ]
+  }
+}

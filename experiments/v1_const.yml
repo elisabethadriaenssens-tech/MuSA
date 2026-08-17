@@ -1,0 +1,9 @@
+
+version: 1
+description: Constant observation error, winter 2016-17, EnKF baseline
+
+uq_method: constant
+r_cov: [0.04]                    # variance m2 -> sigma 0.2 m
+
+obs_source: /data/leuven/378/vsc37876/MasterThesis20252026/MuSA/DATA/Obs_2016_2018
+obs_var_names: ["SD_Ensemble_Mean"]

@@ -15,32 +15,20 @@ author: Lucas Boeykens - lucas.boeykens@ugent.be lucas.boeykens@kuleuven.be
 ml load GCC
 ml load Miniconda3
 
-#--- inputs ---
-idx_run=${1:-19} # which tile handeled 
-rootdirMuSAruns=${2:-"/kyukon/data/gent/vo/000/gvo00090/vsc44965/Doctoraat/Python/Machine_learning/Traditional_MLA/sd/MuSA/test2/"} # location tile folders 
-date_ini=${3:-"2015-09-01 00:00"}  # model windom (should also build zarr file)
-date_end=${4:-"2015-09-30 23:00"} 
-model_only_sites=${5:-True} # sites vs full grid 
-remove_output_cells=${6:-False} # whether to delete per-cell pickles after conversion
-store_measurements=${7:-"/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc"} # is situ SD data 
-tilefile=${8:-"/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/auxdata/mountain_tiles/Alps_tiles.txt"} # tile list 
-
 #--- hard coded paths ---
 ROOTDIR=$(git -C "$(dirname "${BASH_SOURCE[0]}")" rev-parse --show-toplevel)
+
+#--- inputs ---
+idx_run=${1:-19} # which tile handeled
+experiment=${2:-"$ROOTDIR/experiments/v1_const.yml"} # experiment config yml (merged on top of base.yml in the same directory)
 #pythonpath="/kyukon/data/gent/vo/000/gvo00090/\
 #vsc44965/Conda/envs/MuSAenv/bin/python"
 
 pythonpath="/data/leuven/378/vsc37876/conda/envs/MuSAenv/bin/python"
 
 # --- preprocess ---
-cfg_path=$($pythonpath $ROOTDIR/preprocessMuSArunTile.py --date_ini "$date_ini" \
-                                            --date_end "$date_end" \
-                                            --rootdirMuSAruns "$rootdirMuSAruns" \
-                                            --model_only_sites "$model_only_sites" \
-                                            --tilefile "$tilefile" \
-                                            --idx_tile "$idx_run" \
-                                            --remove_output_cells "$remove_output_cells" \
-                                            --store_measurements "$store_measurements"
+cfg_path=$($pythonpath $ROOTDIR/preprocessMuSArunTile.py --experiment "$experiment" \
+                                            --idx_tile "$idx_run"
                                             )
 
 # #--- run MuSA --- -> also exports the results to another format

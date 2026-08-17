@@ -37,76 +37,66 @@ def load_config(
         return yaml.safe_load(f)
 
 
+#keys read from the merged base.yml + experiment yml, mapped to the kwarg
+#names expected by PrepareRunTile / pd.read_csv (tilefile)
+EXPERIMENT_CONFIG_KEYS = {
+    "date_ini": "date_ini",
+    "date_end": "date_end",
+    "runs_root": "rootdirMuSAruns",
+    "model_only_sites": "model_only_sites",
+    "tilefile": "tilefile",
+    "remove_output_cells": "remove_output_cells",
+    "store_measurements": "store_measurements",
+    "implementation": "implementation",
+}
+
+
+def load_experiment_config(
+        experiment_path:str=None,
+        ) -> dict:
+    '''
+    Function to load an experiment YAML config file, merged on top of the
+    shared base.yml config (expected alongside the experiment file in the
+    same directory). Experiment-file keys take precedence over base.yml.
+
+    Returns a dict keyed by the kwarg names expected by PrepareRunTile
+    (plus "tilefile", used only for the tile lookup in main()).
+    '''
+    base_path = os.path.join(os.path.dirname(experiment_path), "base.yml")
+    merged_cfg = {**load_config(base_path), **load_config(experiment_path)}
+
+    missing = [key for key in EXPERIMENT_CONFIG_KEYS if key not in merged_cfg]
+    if missing:
+        raise KeyError(
+            f"Missing required key(s) {missing} in {base_path} and/or {experiment_path}"
+        )
+
+    return {arg_name: merged_cfg[key] for key, arg_name in EXPERIMENT_CONFIG_KEYS.items()}
+
+
 def parse_arguments() -> argparse.Namespace:
     '''
     Function to parse command line arguments for the script.
     '''
-    def str2bool(value: str) -> bool:
-        '''helper function to convert string to boolean'''
-        if isinstance(value, bool):
-            return value
-        value = value.strip().lower()
-        if value in {"true", "1", "yes", "y", "t"}:
-            return True
-        if value in {"false", "0", "no", "n", "f"}:
-            return False
-        raise argparse.ArgumentTypeError(
-            f"Invalid boolean value: {value}. Use True/False."
-        )
-
     parser = argparse.ArgumentParser(description="Regrid DEM to Forcings")
-    parser.add_argument("--implementation",
+    parser.add_argument("--experiment",
                         type=str,
-                        default="open_loop",
-                        help="Implementation type (default: open_loop)")
-    
-    parser.add_argument("--date_ini",
-                        type=str,
-                        default="2018-09-01 00:00",
-                        help="Initial date for the simulation (default: 2018-09-01 00:00)")
-
-    parser.add_argument("--date_end",
-                        type=str,
-                        default="2020-08-30 23:00",
-                        help="End date for the simulation (default: 2020-08-30 21:00)")
+                        required=True,
+                        help="Path to the experiment YAML config file (e.g. experiments/v1_const.yml). "
+                             "Merged on top of base.yml found in the same directory.")
 
     parser.add_argument("--snow_model",
                         type=str,
                         default="FSM2",
                         help="Snow model to use (default: FSM2)")
-    parser.add_argument("--rootdirMuSAruns",
-                        type=str,
-                        default=os.getcwd(),
-                        help="Root directory for MuSA runs (default: current working directory)"
-                        )
-    parser.add_argument("--model_only_sites",
-                        type=str2bool,
-                        default=False,
-                        help="Flag to indicate if only model sites should be considered (default: False)"
-                        )
-    
-    parser.add_argument("--tilefile", 
-                        type=str,
-                        default="/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/auxdata/mountain_tiles/Alps_tiles.txt",
-                        help="Path to the tile file")
 
-    parser.add_argument("--idx_tile", 
+    parser.add_argument("--idx_tile",
                         type=int,
                         default=0,
                         help="Index of the tile to process (default: 0)")
-    
-    parser.add_argument("--remove_output_cells",
-                        type=str2bool,
-                        default=False,
-                        help="Flag to indicate if output cells should be removed after the run (default: False)")
 
-    parser.add_argument("--store_measurements",
-                        type=str,
-                        default="/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc",
-                        help="Path to xr dataset containing the in situ measurements") 
-    
     args = parser.parse_args()
-    
+
     return args
 
 
@@ -209,17 +199,16 @@ def main():
     #parse the command line arguments
     args = parse_arguments()
 
+    #load and merge the experiment config (base.yml + the --experiment override file)
+    experiment_cfg = load_experiment_config(args.experiment)
+
     #get the tiles
-    tiles=pd.read_csv(args.tilefile,header=0)
+    tiles=pd.read_csv(experiment_cfg.pop("tilefile"),header=0)
     tx=tiles.iloc[args.idx_tile]["tx"]
     ty=tiles.iloc[args.idx_tile]["ty"]
 
     #create an instance of the PrepareRunTile class and run the preprocessing
-    args_dict = vars(args)
-    del args_dict["tilefile"]
-    del args_dict["idx_tile"]
-
-    prepclass=PrepareRunTile(tx=tx, ty=ty, **args_dict)
+    prepclass=PrepareRunTile(tx=tx, ty=ty, snow_model=args.snow_model, **experiment_cfg)
     #run the preprocessing and get the path to the adjusted config file
     config_file=prepclass.runPreprocessing()
     print(config_file)
