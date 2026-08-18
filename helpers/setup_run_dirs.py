@@ -7,7 +7,6 @@ shared across experiment versions from {tiles_source}/{tile}/.
 Symlinks (rather than copies) are used because these files are identical
 across experiment versions, so there is no need to duplicate them per run.
 
-contact: Lucas Boeykens -lucas.boeykens@ugent.be lucas.boeykens@kuleuven.be
 '''
 
 #---modules---
@@ -15,7 +14,7 @@ import os, sys, argparse
 import pandas as pd
 project_root=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(project_root)
-from preprocessMuSArunTile import load_experiment_config, load_config
+from preprocessMuSArunTile import load_experiment_config
 
 #---custom functions---
 def parse_arguments() -> argparse.Namespace:
@@ -79,29 +78,17 @@ def setup_tile_dirs(
     _symlink(os.path.join(source_dir, "mask_msites_tile.nc"), os.path.join(rootdirRun, "mask_msites_tile.nc"))
 
 
-def _derive_rootdirMuSAruns(experiment_path:str, runs_root:str) -> str:
-    '''
-    Helper function that derives the version-scoped run root ({runs_root}/v{version})
-    from the "version" key in the merged base.yml + experiment yml config.
-    '''
-    base_path=os.path.join(os.path.dirname(experiment_path), "base.yml")
-    merged_cfg={**load_config(base_path), **load_config(experiment_path)}
-
-    if "version" not in merged_cfg:
-        raise KeyError(f"Missing required key 'version' in {base_path} and/or {experiment_path}")
-
-    return os.path.join(runs_root, f"v{merged_cfg['version']}")
-
-
 #---main function---
 def main():
     #parse the command line arguments
     args = parse_arguments()
 
     #load and merge the experiment config (base.yml + the --experiment override file)
+    #rootdirMuSAruns comes back version-scoped ({runs_root}/v{version}) from
+    #load_experiment_config, matching what preprocessMuSArunTile.py uses
     experiment_cfg = load_experiment_config(args.experiment)
 
-    rootdirMuSAruns = _derive_rootdirMuSAruns(args.experiment, experiment_cfg["rootdirMuSAruns"])
+    rootdirMuSAruns = experiment_cfg["rootdirMuSAruns"]
     tiles_source = experiment_cfg["tiles_source"]
 
     #get the tiles

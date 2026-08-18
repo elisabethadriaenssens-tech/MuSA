@@ -23,6 +23,96 @@ import dask.array as da
 from joblib import Parallel, delayed
 
 #---functions---
+def SubsetForcingsZarr(
+    tiles_source:str,
+    tx:int,
+    ty:int,
+    date_ini:str,
+    date_end:str,
+    savedir:str=os.getcwd(),
+    ) -> str:
+    '''
+    Function that subsets an existing, already-converted forcings zarr store found on
+    tiles_source for a specific tile (tx, ty) to the requested [date_ini, date_end] range,
+    and writes the subset to its own zarr store in savedir.
+
+    Unlike CreateZarrTransformedForcings, this does not build a zarr from daily NetCDFs --
+    it assumes a converted forcings zarr already exists for the tile on tiles_source and only
+    needs to be sliced along the date dimension.
+    '''
+    tile_str=f"y{ty:03d}x{tx:03d}"
+
+    #---find the source zarr store---
+    sources=glob.glob(os.path.join(tiles_source, tile_str, "FORCINGS", "forcings_*.zarr"))
+    if not sources:
+        raise FileNotFoundError(
+            f"No source forcings zarr found for tile {tile_str} in "
+            f"{os.path.join(tiles_source, tile_str, 'FORCINGS')} (pattern 'forcings_*.zarr')."
+        )
+    if len(sources) > 1:
+        raise ValueError(
+            f"Expected exactly one source forcings zarr for tile {tile_str} in "
+            f"{os.path.join(tiles_source, tile_str, 'FORCINGS')}, found {len(sources)}: {sources}"
+        )
+    source_store=sources[0]
+
+    #---open the source store and check the requested range is fully covered---
+    ds_source=xr.open_zarr(source_store, consolidated=True)
+
+    #normalize to day resolution: "date" is a day-resolution axis, hour-of-day lives on
+    #"time" instead, so date_end's "23:00" (e.g.) must not make it look like a later day
+    day_ini=pd.Timestamp(date_ini).normalize()
+    day_end=pd.Timestamp(date_end).normalize()
+    source_date_min=pd.Timestamp(ds_source["date"].values.min())
+    source_date_max=pd.Timestamp(ds_source["date"].values.max())
+
+    if day_ini < source_date_min or day_end > source_date_max:
+        raise ValueError(
+            f"Requested date range {day_ini.date()} to {day_end.date()} is not fully "
+            f"covered by the source store {source_store}, which spans "
+            f"{source_date_min.date()} to {source_date_max.date()}."
+        )
+
+    #---slice the date dimension (never time -- time is hour-of-day, not a date axis)---
+    ds_subset=ds_source.sel(date=slice(day_ini, day_end))
+
+    if ds_subset.sizes.get("date", 0) == 0:
+        raise ValueError(
+            f"Slicing {source_store} to {day_ini.date()}-{day_end.date()} returned an "
+            "empty date dimension."
+        )
+
+    #---clear encoding on every variable/coordinate---
+    #why: the source's 2560-day chunk encoding doesn't fit a much shorter date slice,
+    #and to_zarr raises if the encoded chunks disagree with the data being written
+    for v in ds_subset.variables:
+        ds_subset[v].encoding.clear()
+
+    #---write the subset to its own zarr store---
+    filename=f"forcings_{day_ini.strftime('%Y%m%d')}_{day_end.strftime('%Y%m%d')}.zarr"
+    os.makedirs(savedir, exist_ok=True)
+    out_path=os.path.join(savedir, filename)
+
+    ds_subset.to_zarr(out_path, mode="w", consolidated=True, zarr_format=2)
+
+    #---verify the written store: a silent empty/short write would otherwise only surface---
+    #---much later, deep inside a MuSA run, instead of here where the cause is obvious---
+    ds_written=xr.open_zarr(out_path, consolidated=True)
+    written_n_dates=ds_written.sizes.get("date", 0)
+    if written_n_dates == 0:
+        raise ValueError(f"Verification failed: written store {out_path} has an empty date dimension.")
+
+    written_date_min=pd.Timestamp(ds_written["date"].values.min())
+    written_date_max=pd.Timestamp(ds_written["date"].values.max())
+    if written_date_min != day_ini or written_date_max != day_end:
+        raise ValueError(
+            f"Verification failed: written store {out_path} spans "
+            f"{written_date_min.date()} to {written_date_max.date()}, expected "
+            f"{day_ini.date()} to {day_end.date()}."
+        )
+
+    return out_path
+
 def _makeEmptyTemplateZarrForcings(
     rootdirForcings:str="/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/Forcings/tiles/3hourly",
     tx:int=201, 

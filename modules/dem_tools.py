@@ -17,6 +17,24 @@ sys.path.append((os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 from utils.OperationsXrDatasets import transpose_dataset, saveXrtoNetCDF
 
 #---functions---
+def ReadRegriddedDEM(dem_dir:str) -> tuple[str, int]:
+    '''
+    Function that reads the DEM variable name and resolution from an already-regridded
+    DEM file expected in dem_dir (e.g. symlinked in by helpers/setup_run_dirs.py from
+    tiles_source, or previously written here by RegridDEMtoForcings).
+    '''
+    dem_files=glob.glob(os.path.join(dem_dir, "*regridded*"))
+    if not dem_files:
+        raise FileNotFoundError(
+            f"No regridded DEM file found in {dem_dir}. Expected dem_regridded.nc to be "
+            "symlinked in by helpers/setup_run_dirs.py before running preprocessMuSArunTile.py."
+        )
+    with xr.open_dataset(dem_files[0]) as ds:
+        dem_var=next(d for d in ds.data_vars if "dem" in d.lower())
+        dem_res=960//ds.sizes["lat"]*100
+
+    return dem_var, dem_res
+
 def RegridDEMtoForcings(
         datadir_forcings:str, 
         savedir:str,
@@ -33,9 +51,7 @@ def RegridDEMtoForcings(
     check_exist=glob.glob(os.path.join(savedir, "*regridded*"))
 
     if check_exist:
-        with xr.open_dataset(check_exist[0]) as ds:
-            dem_var=next(d for d in ds.data_vars if "dem" in d.lower())
-            dem_res=960//ds.sizes["lat"]*100
+        dem_var, dem_res=ReadRegriddedDEM(dem_dir=savedir)
         print(f"DEM regridded to forcings already exists. DEM variable name: {dem_var}, DEM resolution: {dem_res} m.", file=sys.stderr)
 
         return dem_var, dem_res

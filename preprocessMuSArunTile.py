@@ -21,7 +21,7 @@ import os, sys, argparse, yaml
 import pandas as pd
 project_root=os.getcwd()
 sys.path.append(project_root)
-from modules.dem_tools import RegridDEMtoForcings
+from modules.dem_tools import ReadRegriddedDEM
 import modules.prepareForcingsZarr as prepForcing_tools
 import modules.prepareRunTile_tools as prepRuntile_tools
 import modules.internal_fns as ifn
@@ -40,8 +40,9 @@ def load_config(
 #keys read from the merged base.yml + experiment yml, mapped to the kwarg
 #names expected by PrepareRunTile / pd.read_csv (tilefile).
 #Doubles as the REQUIRED_KEYS check in load_experiment_config below.
-#NOTE: "tilefile" and "tiles_source" are not accepted by PrepareRunTile and
-#must be popped from the merged dict before it is passed there (see main()).
+#NOTE: "tilefile" is not accepted by PrepareRunTile and must be popped from
+#the merged dict before it is passed there (see main()). "tiles_source" IS
+#accepted by PrepareRunTile (needed by SubsetForcingsZarr).
 EXPERIMENT_CONFIG_KEYS = {
     "date_ini": "date_ini",
     "date_end": "date_end",
@@ -63,10 +64,14 @@ def load_experiment_config(
     shared base.yml config (expected alongside the experiment file in the
     same directory). Experiment-file keys take precedence over base.yml.
 
-    Returns a dict keyed by the kwarg names expected by PrepareRunTile
-    (plus "tilefile" and "tiles_source", which are not accepted by
-    PrepareRunTile and must be popped by the caller before use -- see
-    main() below and helpers/setup_run_dirs.py).
+    Returns a dict keyed by the kwarg names expected by PrepareRunTile,
+    plus "tilefile" which is not accepted by PrepareRunTile and must be
+    popped by the caller before use (see main() below). "tiles_source" IS
+    accepted by PrepareRunTile and is also read directly by
+    helpers/setup_run_dirs.py.
+
+    "rootdirMuSAruns" is returned version-scoped ({runs_root}/v{version}) so that
+    this script and helpers/setup_run_dirs.py always agree on the same run root.
     '''
     base_path = os.path.join(os.path.dirname(experiment_path), "base.yml")
     merged_cfg = {**load_config(base_path), **load_config(experiment_path)}
@@ -77,7 +82,13 @@ def load_experiment_config(
             f"Missing required key(s) {missing} in {base_path} and/or {experiment_path}"
         )
 
-    return {arg_name: merged_cfg[key] for key, arg_name in EXPERIMENT_CONFIG_KEYS.items()}
+    if "version" not in merged_cfg:
+        raise KeyError(f"Missing required key 'version' in {base_path} and/or {experiment_path}")
+
+    cfg = {arg_name: merged_cfg[key] for key, arg_name in EXPERIMENT_CONFIG_KEYS.items()}
+    cfg["rootdirMuSAruns"] = os.path.join(cfg["rootdirMuSAruns"], f"v{merged_cfg['version']}")
+
+    return cfg
 
 
 def parse_arguments() -> argparse.Namespace:
@@ -121,6 +132,7 @@ class PrepareRunTile:
         model_only_sites: bool, flag to indicate if only model sites should be considered.
         remove_output_cells: bool, flag to indicate if output cells should be removed after the run
         store_measurements: str, path to xr dataset containing the in situ measurements (default: "/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc")
+        tiles_source: str, root directory on staging containing the per-tile source forcings zarr stores
 
     Returns:
         str, path to the adjusted config file
@@ -135,7 +147,8 @@ class PrepareRunTile:
                  implementation:str, 
                  model_only_sites:bool,
                  remove_output_cells:bool,
-                 store_measurements:str
+                 store_measurements:str,
+                 tiles_source:str
                  ):
         self.tx=tx
         self.ty=ty
@@ -147,6 +160,7 @@ class PrepareRunTile:
         self.model_only_sites=model_only_sites
         self.remove_output_cells=remove_output_cells
         self.store_measurements=store_measurements
+        self.tiles_source=tiles_source
 
     def runPreprocessing(self) -> str:
         ''' 
@@ -167,21 +181,18 @@ class PrepareRunTile:
             )
         
         if check_forcings_store is None:
-            prepForcing_tools.CreateZarrTransformedForcings(
+            prepForcing_tools.SubsetForcingsZarr(
+                tiles_source=self.tiles_source,
                 tx=self.tx,
                 ty=self.ty,
                 date_ini=self.date_ini,
                 date_end=self.date_end,
                 savedir=forcing_dir,
-                filename="forcings.zarr"
                 )
             print("Forcings zarr file created successfully.", file=sys.stderr)
         
-        #check the DEM -> generate for tx,ty if required
-        dem_var, dem_res=RegridDEMtoForcings(
-                datadir_forcings=forcing_dir, 
-                savedir=dem_dir
-            )
+        #DEM is already regridded and symlinked into dem_dir by helpers/setup_run_dirs.py
+        dem_var, dem_res=ReadRegriddedDEM(dem_dir=dem_dir)
 
         #adjust the config-file
         out_path=prepRuntile_tools.adjust_config_file(
@@ -213,10 +224,9 @@ def main():
     tx=tiles.iloc[args.idx_tile]["tx"]
     ty=tiles.iloc[args.idx_tile]["ty"]
 
-    #tiles_source is only used by helpers/setup_run_dirs.py, not by PrepareRunTile
-    experiment_cfg.pop("tiles_source")
-
     #create an instance of the PrepareRunTile class and run the preprocessing
+    #tiles_source is now also consumed by PrepareRunTile (SubsetForcingsZarr needs it
+    #to locate the source store); helpers/setup_run_dirs.py still reads it separately
     prepclass=PrepareRunTile(tx=tx, ty=ty, snow_model=args.snow_model, **experiment_cfg)
     #run the preprocessing and get the path to the adjusted config file
     config_file=prepclass.runPreprocessing()
