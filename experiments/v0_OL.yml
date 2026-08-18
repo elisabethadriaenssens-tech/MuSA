@@ -1,0 +1,5 @@
+version: 0
+description: Open loop (no assimilation), winter 2016-17
+
+uq_method: none
+implementation: open_loop

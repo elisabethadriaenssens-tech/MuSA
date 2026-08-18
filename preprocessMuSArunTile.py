@@ -53,6 +53,9 @@ EXPERIMENT_CONFIG_KEYS = {
     "remove_output_cells": "remove_output_cells",
     "store_measurements": "store_measurements",
     "implementation": "implementation",
+    "tmp_path": "tmp_path",
+    "save_ensemble": "save_ensemble",
+    "write_stat_daily": "write_stat_daily",
 }
 
 
@@ -133,22 +136,28 @@ class PrepareRunTile:
         remove_output_cells: bool, flag to indicate if output cells should be removed after the run
         store_measurements: str, path to xr dataset containing the in situ measurements (default: "/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc")
         tiles_source: str, root directory on staging containing the per-tile source forcings zarr stores
+        tmp_path: str, path to the temporary directory used by MuSA during the run
+        save_ensemble: bool, flag to indicate if the ensemble should be saved as a pkl object
+        write_stat_daily: bool, flag to indicate if the outputs should be averaged at a daily time step
 
     Returns:
         str, path to the adjusted config file
     """
-    def __init__(self, 
-                 tx:int, 
-                 ty:int, 
-                 rootdirMuSAruns:str, 
-                 date_ini:str, 
-                 date_end:str, 
-                 snow_model:str, 
-                 implementation:str, 
+    def __init__(self,
+                 tx:int,
+                 ty:int,
+                 rootdirMuSAruns:str,
+                 date_ini:str,
+                 date_end:str,
+                 snow_model:str,
+                 implementation:str,
                  model_only_sites:bool,
                  remove_output_cells:bool,
                  store_measurements:str,
-                 tiles_source:str
+                 tiles_source:str,
+                 tmp_path:str,
+                 save_ensemble:bool,
+                 write_stat_daily:bool
                  ):
         self.tx=tx
         self.ty=ty
@@ -161,6 +170,9 @@ class PrepareRunTile:
         self.remove_output_cells=remove_output_cells
         self.store_measurements=store_measurements
         self.tiles_source=tiles_source
+        self.tmp_path=tmp_path
+        self.save_ensemble=save_ensemble
+        self.write_stat_daily=write_stat_daily
 
     def runPreprocessing(self) -> str:
         ''' 
@@ -205,7 +217,10 @@ class PrepareRunTile:
                 implementation=self.implementation,
                 model_only_sites=self.model_only_sites,
                 remove_output_cells=self.remove_output_cells,
-                store_measurements=self.store_measurements
+                store_measurements=self.store_measurements,
+                tmp_path=self.tmp_path,
+                save_ensemble=self.save_ensemble,
+                write_stat_daily=self.write_stat_daily
             )
         print("Preprocessing complete!", file=sys.stderr)
 

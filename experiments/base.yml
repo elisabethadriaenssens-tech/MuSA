@@ -21,3 +21,8 @@ remove_output_cells: false
 
 # --- observations ---
 obs_sd_floor: 0.05
+sigma_divisor: 2.0
+# --- run behaviour ---
+tmp_path: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/TMP_MUSA
+save_ensemble: true
+write_stat_daily: true

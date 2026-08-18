@@ -265,7 +265,10 @@ def adjust_config_file(
         nprocess_min:int=8,
         model_only_sites:bool=False,
         remove_output_cells:bool=False,
-        store_measurements:str="/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc"
+        store_measurements:str="/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc",
+        tmp_path:str="/scratch/gent/vo/000/gvo00090/vsc44965/TMP_MUSA",
+        save_ensemble:bool=False,
+        write_stat_daily:bool=False
     ) -> str:
     ''' 
     Function that changes the config file based on the input arguments. 
@@ -355,6 +358,11 @@ def adjust_config_file(
 
     #--adjust the remove_output_cells in the config file--
     cfg.remove_output_cells=remove_output_cells
+
+    #--adjust the tmp_path, save_ensemble and write_stat_daily in the config file--
+    cfg.tmp_path=tmp_path
+    cfg.save_ensemble=save_ensemble
+    cfg.write_stat_daily=write_stat_daily
 
     #--save the adjusted config file to the rootdirRun--
     out_path=_save_config_module(rootdirRun)
