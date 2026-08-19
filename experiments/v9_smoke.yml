@@ -1,0 +1,6 @@
+version: 9
+description: Smoke test - 2 months, deterministic OL
+uq_method: none
+implementation: open_loop
+date_ini: "2016-09-01 00:00"
+date_end: "2016-10-31 23:00"

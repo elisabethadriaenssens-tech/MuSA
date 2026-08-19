@@ -37,4 +37,4 @@ export MUSA_CONFIG=$cfg_path
 ${pythonpath} ${ROOTDIR}/runMuSAtile.py # ADDED: ROOTDIR
 
 #--- remove the config file after the run ---
-rm -f $cfg_path
+#rm -f $cfg_path  # keep for debugging

@@ -363,6 +363,7 @@ def adjust_config_file(
     cfg.tmp_path=tmp_path
     cfg.save_ensemble=save_ensemble
     cfg.write_stat_daily=write_stat_daily
+    cfg.store_measurements=store_measurements
 
     #--save the adjusted config file to the rootdirRun--
     out_path=_save_config_module(rootdirRun)

@@ -3,7 +3,7 @@
 #define CANINT 2   /* canopy interception of snow   : 1, 2            */
 #define CANMOD 2   /* forest canopy layers          : 1, 2            */
 #define CANRAD 2   /* canopy radiative properties   : 1, 2            */
-#define CANUNL pyCANUL    /* unloading of canopy           : 1, 2            */
+#define CANUNL 2   /* unloading of canopy           : 1, 2            */
 #define CONDCT 1   /* snow thermal conductivity     : 0, 1            */
 #define DENSTY 2  /* snow density                  : 0, 1, 2         */
 #define EXCHNG 1   /* turbulent exchange            : 0, 1            */
