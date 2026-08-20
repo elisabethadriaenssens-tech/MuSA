@@ -1,0 +1,15 @@
+version: 2
+description: >
+  Jan-Mar 2017, dynamic obs error (IP), Dischma window.
+  SD_Ensemble_Std is already a sigma, so no divisor assumption is involved
+  for IP -- unlike QR/CQR, which derive sigma from quantiles via sigma_divisor.
+  Dischma survey date (2017-03-16) falls inside this window.
+
+uq_method: IP
+r_cov: dynamic_error
+
+obs_source: /staging/leuven/stg_00024/MSC_TMP/Snowshop/PREDICTIONS_Elisabeth
+obs_var_names: ["SD_Ensemble_Mean"]
+
+date_ini: "2017-01-01 00:00"
+date_end: "2017-03-31 23:00"

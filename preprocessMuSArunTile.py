@@ -24,6 +24,7 @@ sys.path.append(project_root)
 from modules.dem_tools import ReadRegriddedDEM
 import modules.prepareForcingsZarr as prepForcing_tools
 import modules.prepareRunTile_tools as prepRuntile_tools
+import modules.prepareObs_tools as prepObs_tools
 import modules.internal_fns as ifn
 
 #---custom functions---
@@ -56,7 +57,22 @@ EXPERIMENT_CONFIG_KEYS = {
     "tmp_path": "tmp_path",
     "save_ensemble": "save_ensemble",
     "write_stat_daily": "write_stat_daily",
+    "da_algorithm": "da_algorithm",
+    "obs_source": "obs_source",
+    "uq_method": "uq_method",
+    "obs_var_names": "obs_var_names",
+    "obs_error_var_names": "obs_error_var_names",
+    "r_cov": "r_cov",
+    "lat_obs_var_name": "lat_obs_var_name",
+    "lon_obs_var_name": "lon_obs_var_name",
+    "obs_sd_floor": "floor",
+    "sigma_divisor": "divisor",
+    "cqr_adjustment": "cqr_adjustment",
+    "obs_error_aggregation": "obs_error_aggregation",
 }
+# NOTE: "dates_obs" is deliberately absent here -- it is derived at runtime by
+# PrepareRunTile.runPreprocessing() from the observation files PrepareObsTile actually
+# writes, never taken from the yml (see PrepareObsTile in modules/prepareObs_tools.py).
 
 
 def load_experiment_config(
@@ -139,6 +155,28 @@ class PrepareRunTile:
         tmp_path: str, path to the temporary directory used by MuSA during the run
         save_ensemble: bool, flag to indicate if the ensemble should be saved as a pkl object
         write_stat_daily: bool, flag to indicate if the outputs should be averaged at a daily time step
+        da_algorithm: str, DA algorithm to use (e.g. "EnKF", "PBS", "deterministic_OL"). Forced
+            to "deterministic_OL" when implementation=="open_loop", regardless of this value.
+        obs_source: str, root directory on staging containing the per-tile prediction/obs files
+            (expects {obs_source}/y{ty:03d}x{tx:03d}/sd_*.nc). Unused when uq_method=="none".
+        uq_method: str, one of "none" (open_loop, no obs needed), "constant" (obs files
+            written as-is, fixed r_cov), "IP"/"QR"/"CQR" (dynamic per-cell obs error variance
+            computed and attached before writing -- see PrepareObsTile).
+        obs_var_names: list[str], names of the observed variable(s) as they appear in the
+            (regridded) observation files.
+        obs_error_var_names: list[str], names under which the dynamic obs error variance is
+            stored in the observation files. Used when r_cov=="dynamic_error".
+        r_cov: list[float] | str, fixed observation error variance(s), or "dynamic_error" to
+            read the per-cell variance from obs_error_var_names instead.
+        lat_obs_var_name / lon_obs_var_name: str, names of the lat/lon coordinates in the
+            observation files.
+        floor: float, minimum sigma (in the same units as the observation) enforced when
+            computing the dynamic obs error variance.
+        cqr_adjustment: float | None, required when uq_method=="CQR".
+        divisor: float, divisor applied when computing sigma from quantiles (QR/CQR).
+        obs_error_aggregation: str, one of "correlated" (default; sigma_week = mean(sigma_i),
+            no error reduction from averaging retrievals within a weekly window) or
+            "independent" (sigma_week = sqrt(sum(sigma_i**2)) / n). See PrepareObsTile.
 
     Returns:
         str, path to the adjusted config file
@@ -157,7 +195,19 @@ class PrepareRunTile:
                  tiles_source:str,
                  tmp_path:str,
                  save_ensemble:bool,
-                 write_stat_daily:bool
+                 write_stat_daily:bool,
+                 da_algorithm:str,
+                 obs_source:str,
+                 uq_method:str,
+                 obs_var_names:list,
+                 obs_error_var_names:list,
+                 r_cov,
+                 lat_obs_var_name:str,
+                 lon_obs_var_name:str,
+                 floor:float,
+                 cqr_adjustment,
+                 divisor:float,
+                 obs_error_aggregation:str="correlated",
                  ):
         self.tx=tx
         self.ty=ty
@@ -173,6 +223,18 @@ class PrepareRunTile:
         self.tmp_path=tmp_path
         self.save_ensemble=save_ensemble
         self.write_stat_daily=write_stat_daily
+        self.da_algorithm=da_algorithm
+        self.obs_source=obs_source
+        self.uq_method=uq_method
+        self.obs_var_names=obs_var_names
+        self.obs_error_var_names=obs_error_var_names
+        self.r_cov=r_cov
+        self.lat_obs_var_name=lat_obs_var_name
+        self.lon_obs_var_name=lon_obs_var_name
+        self.floor=floor
+        self.cqr_adjustment=cqr_adjustment
+        self.divisor=divisor
+        self.obs_error_aggregation=obs_error_aggregation
 
     def runPreprocessing(self) -> str:
         ''' 
@@ -206,6 +268,34 @@ class PrepareRunTile:
         #DEM is already regridded and symlinked into dem_dir by helpers/setup_run_dirs.py
         dem_var, dem_res=ReadRegriddedDEM(dem_dir=dem_dir)
 
+        #prepare the observation files for this tile/period and derive dates_obs from
+        #the files actually written (obs_array assumes file n <-> dates_obs[n], so the
+        #dates must come from this loop, never from the yml). Skipped for uq_method=="none"
+        #(open_loop), which never reads observations at all.
+        #NOTE: obs_dir must match cfg.nc_obs_path, set from rootdirRun the same way in
+        #modules/prepareRunTile_tools.py::_UpdateConfigPaths.
+        obs_dir=os.path.join(rootdirRun, "Obs")
+        if self.uq_method == "none":
+            dates_obs=[]
+        else:
+            dates_obs=prepObs_tools.PrepareObsTile(
+                obs_source=self.obs_source,
+                tx=self.tx,
+                ty=self.ty,
+                date_ini=self.date_ini,
+                date_end=self.date_end,
+                dem_dir=dem_dir,
+                obs_dir=obs_dir,
+                uq_method=self.uq_method,
+                obs_var_names=self.obs_var_names,
+                obs_error_var_names=self.obs_error_var_names,
+                floor=self.floor,
+                cqr_adjustment=self.cqr_adjustment,
+                divisor=self.divisor,
+                obs_error_aggregation=self.obs_error_aggregation,
+                )
+            print(f"Observation files prepared: {len(dates_obs)} dates.", file=sys.stderr)
+
         #adjust the config-file
         out_path=prepRuntile_tools.adjust_config_file(
                 snowmodel=self.snow_model,
@@ -220,7 +310,14 @@ class PrepareRunTile:
                 store_measurements=self.store_measurements,
                 tmp_path=self.tmp_path,
                 save_ensemble=self.save_ensemble,
-                write_stat_daily=self.write_stat_daily
+                write_stat_daily=self.write_stat_daily,
+                da_algorithm=self.da_algorithm,
+                dates_obs=dates_obs,
+                obs_var_names=self.obs_var_names,
+                obs_error_var_names=self.obs_error_var_names,
+                r_cov=self.r_cov,
+                lat_obs_var_name=self.lat_obs_var_name,
+                lon_obs_var_name=self.lon_obs_var_name,
             )
         print("Preprocessing complete!", file=sys.stderr)
 

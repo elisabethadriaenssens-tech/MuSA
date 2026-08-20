@@ -200,16 +200,17 @@ def _check_date_ini_end(
     return date_ini, date_end
 
 def _UpdateConfigPaths(
-        rootdirRun:str=None, 
-        forcing_dir:str=None, 
-        dem_dir:str=None, 
+        rootdirRun:str=None,
+        forcing_dir:str=None,
+        dem_dir:str=None,
         implementation:str=None,
+        da_algorithm:str=None,
         date_ini:str="2018-09-01 00:00",
         date_end:str="2020-08-30 23:00"
         ) -> None:
     '''
-    Function that adjusts certain path variables in the 
-    config.py file to point to the correct directories for the current run. given the 
+    Function that adjusts certain path variables in the
+    config.py file to point to the correct directories for the current run. given the
     arguments provided.
     '''
     #check date_ini and date_end
@@ -219,6 +220,9 @@ def _UpdateConfigPaths(
 
     #adjust the implementation type in the config file--
     cfg.implementation=implementation
+    #adjust da_algorithm from the experiment config before the results/intermediate
+    #folder names (below) are built from it
+    cfg.da_algorithm=da_algorithm
     if cfg.implementation=="open_loop":
         cfg.da_algorithm="deterministic_OL" #ADDED: make it deterministic OL to not print out unnecessary info in ifn.run_model_openloop
 
@@ -268,7 +272,14 @@ def adjust_config_file(
         store_measurements:str="/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc",
         tmp_path:str="/scratch/gent/vo/000/gvo00090/vsc44965/TMP_MUSA",
         save_ensemble:bool=False,
-        write_stat_daily:bool=False
+        write_stat_daily:bool=False,
+        da_algorithm:str="PBS",
+        dates_obs:list=None,
+        obs_var_names:list=None,
+        obs_error_var_names:list=None,
+        r_cov=None,
+        lat_obs_var_name:str="lat",
+        lon_obs_var_name:str="lon",
     ) -> str:
     ''' 
     Function that changes the config file based on the input arguments. 
@@ -316,11 +327,12 @@ def adjust_config_file(
     cfg.dt=cfg.dt*step_size_forcings
 
     #---update the config paths based on the rootdirRun, forcing_dir, dem_dir, and date_ini and date_end---
-    _UpdateConfigPaths(rootdirRun=rootdirRun, 
+    _UpdateConfigPaths(rootdirRun=rootdirRun,
                     forcing_dir=forcing_dir,
-                    dem_dir=dem_dir, 
-                    implementation=implementation, 
-                    date_ini=date_ini, 
+                    dem_dir=dem_dir,
+                    implementation=implementation,
+                    da_algorithm=da_algorithm,
+                    date_ini=date_ini,
                     date_end=date_end)
 
     #---adjust the number of processes in the config file---
@@ -364,6 +376,16 @@ def adjust_config_file(
     cfg.save_ensemble=save_ensemble
     cfg.write_stat_daily=write_stat_daily
     cfg.store_measurements=store_measurements
+
+    #--adjust the DA/observation fields in the config file--
+    #(da_algorithm is already set in _UpdateConfigPaths above, since the results/
+    #intermediate folder names are derived from it before this point)
+    cfg.dates_obs=dates_obs
+    cfg.obs_var_names=obs_var_names
+    cfg.obs_error_var_names=obs_error_var_names
+    cfg.r_cov=r_cov
+    cfg.lat_obs_var_name=lat_obs_var_name
+    cfg.lon_obs_var_name=lon_obs_var_name
 
     #--save the adjusted config file to the rootdirRun--
     out_path=_save_config_module(rootdirRun)

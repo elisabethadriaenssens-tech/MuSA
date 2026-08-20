@@ -22,6 +22,18 @@ remove_output_cells: false
 # --- observations ---
 obs_sd_floor: 0.05
 sigma_divisor: 2.0
+cqr_adjustment: null           # required only when uq_method: CQR
+obs_error_aggregation: correlated  # "correlated" (default, no sqrt(n) reduction) or "independent"
+lat_obs_var_name: lat
+lon_obs_var_name: lon
+obs_error_var_names: [sdError] # variable name for the dynamic (per-cell) obs error variance
+# placeholders below: only meaningful when uq_method != none; harmless for open_loop
+# experiments (e.g. v0_OL.yml) which never call PrepareObsTile / obs_array. Kept here
+# (rather than relaxing EXPERIMENT_CONFIG_KEYS) so every experiment yml is still checked
+# for the same required key set.
+obs_source: null
+obs_var_names: []
+r_cov: [0.04]
 # --- run behaviour ---
 tmp_path: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/TMP_MUSA
 save_ensemble: true
