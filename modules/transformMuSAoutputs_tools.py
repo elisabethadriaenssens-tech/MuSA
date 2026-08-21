@@ -232,6 +232,34 @@ def _process_cells_onlysites(
     dsMeasTile=dsMeas.where(index, drop=True)
     sites=dsMeasTile["site"].values
 
+    def _table_to_daily(table, value_cols, date_col="Date"):
+        '''
+        Return `table` collapsed to one row per day, indexed by `date`.
+
+        Tables at forcing resolution (row count == len(index_datetime), e.g.
+        DA_Results, or the Prior/Post stats when write_stat_daily=False) get
+        the same daily-mean treatment as the open-loop path. Tables already
+        at daily resolution (Prior/Post stats when write_stat_daily=True)
+        just have their own Date column parsed.
+        '''
+        table = table[[date_col] + value_cols].copy()
+        if len(table) == len(index_datetime):
+            table.index = index_datetime
+            table = (
+                table.reset_index()
+                .groupby("date", as_index=False)[value_cols]
+                .mean()
+            )
+        else:
+            if pd.api.types.is_datetime64_any_dtype(table[date_col]):
+                table[date_col] = pd.to_datetime(table[date_col])
+            else:
+                table[date_col] = pd.to_datetime(
+                    table[date_col], format="%d/%m/%Y-%H:%M"
+                )
+            table = table.rename(columns={date_col: "date"})
+        return table.set_index("date")
+
     # generate a DataFrame for each site and concatenate them
     df_sites=[]
     for site in sites:
@@ -250,19 +278,34 @@ def _process_cells_onlysites(
 
         # read the cell
         cell = ifn.io_read(file).copy()
-        # error handling: check if the length of the cell matches the length of the index
-        if len(cell) != len(index_datetime):
-            raise ValueError(
-                f"File {file} has {len(cell)} rows, but the forcing index has {len(index_datetime)} entries."
+
+        if isinstance(cell, dict):
+            # DA output: dict of DA_Results, OL_Sim, mean/std_Prior, mean/std_Post
+            stat_daily = []
+            for key in ["mean_Prior", "std_Prior", "mean_Post", "std_Post"]:
+                stat_df = _table_to_daily(cell[key], vars_to_save)
+                stat_df = stat_df.rename(columns={v: f"{v}_{key}" for v in vars_to_save})
+                stat_daily.append(stat_df)
+
+            noise_cols = ["Prec_noise_mean", "Prec_noise_sd", "Ta_noise_mean", "Ta_noise_sd"]
+            stat_daily.append(_table_to_daily(cell["DA_Results"], noise_cols))
+
+            cell = pd.concat(stat_daily, axis=1).reset_index()
+            cell["date"] = pd.to_datetime(cell["date"])
+        else:
+            # open-loop output: a single DataFrame at forcing resolution
+            if len(cell) != len(index_datetime):
+                raise ValueError(
+                    f"File {file} has {len(cell)} rows, but the forcing index has {len(index_datetime)} entries."
+                )
+            # set the index and take daily means of the cell data
+            cell.index = index_datetime
+            cell = (
+                cell.reset_index()
+                .groupby("date", as_index=False)[vars_to_save]
+                .mean()
             )
-        # set the index and take daily means of the cell data
-        cell.index = index_datetime
-        cell = (
-            cell.reset_index()
-            .groupby("date", as_index=False)[vars_to_save]
-            .mean()
-        )
-        cell["date"] = pd.to_datetime(cell["date"])
+            cell["date"] = pd.to_datetime(cell["date"])
 
         # get the site information from the measurements dataset
         site_info = (
