@@ -196,8 +196,11 @@ def PrepareObsTile(
 
     Globs {obs_source}/y{ty:03d}x{tx:03d}/sd_*.nc, keeps files within [date_ini, date_end],
     regrids each onto the tile's DEM grid, and bins the regridded retrievals into
-    consecutive 7-day windows starting at date_ini. One output file is written per
-    non-empty window (windows with no retrievals are skipped, never written empty):
+    consecutive 7-day windows starting at date_ini. A window is also dropped (with a
+    message explaining why) if its midpoint falls outside [date_ini, date_end] -- the
+    midpoint is never clamped into range, since that would assimilate the observation on
+    the wrong date. One output file is written per remaining non-empty window (windows
+    with no retrievals are skipped, never written empty):
         - obs_var_names[0] is averaged across the retrievals present in the window
           (skipping NaNs), and timestamped at the window's midpoint (e.g. a 1-7 Sep
           window is timestamped 4 Sep).
@@ -308,6 +311,15 @@ def PrepareObsTile(
 
         window_start=date_ini_ts + pd.Timedelta(days=7 * window_idx)
         midpoint=window_start + pd.Timedelta(days=3)
+
+        if not (date_ini_ts <= midpoint <= date_end_ts):
+            print(
+                f"[PrepareObsTile] window {window_start.date()}-"
+                f"{(window_start + pd.Timedelta(days=6)).date()} dropped: its midpoint "
+                f"{midpoint} falls outside [{date_ini}, {date_end}].",
+                file=sys.stderr,
+            )
+            continue
 
         obs_das=[e[0] for e in entries]
         obs_week=xr.concat(obs_das, dim="retrieval").mean(dim="retrieval", skipna=True)

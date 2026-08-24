@@ -10,7 +10,8 @@ across experiment versions, so there is no need to duplicate them per run.
 '''
 
 #---modules---
-import os, sys, argparse
+import os, sys, argparse, yaml
+from datetime import datetime
 import pandas as pd
 project_root=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(project_root)
@@ -90,6 +91,21 @@ def main():
 
     rootdirMuSAruns = experiment_cfg["rootdirMuSAruns"]
     tiles_source = experiment_cfg["tiles_source"]
+
+    #record the resolved (merged) config for this run, so the version
+    #directory is self-documenting about where it came from
+    os.makedirs(rootdirMuSAruns, exist_ok=True)
+    resolved_config_path = os.path.join(rootdirMuSAruns, "resolved_config.yml")
+    if os.path.exists(resolved_config_path):
+        print(f"WARNING: overwriting existing {resolved_config_path}", file=sys.stderr)
+
+    resolved_config = {
+        **experiment_cfg,
+        "source_experiment": os.path.basename(args.experiment),
+        "resolved_at": datetime.now().isoformat(),
+    }
+    with open(resolved_config_path, "w") as f:
+        yaml.safe_dump(resolved_config, f)
 
     #get the tiles
     tiles=pd.read_csv(experiment_cfg["tilefile"], header=0)

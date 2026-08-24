@@ -1,0 +1,15 @@
+SLURM_JOB_ID: 61772234
+SLURM_JOB_USER: vsc37876
+SLURM_JOB_ACCOUNT: lp_ees_swm_ls_001
+SLURM_JOB_NAME: DA_v4_IP_year
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: s28c11n2
+SLURM_JOB_CPUS_PER_NODE: 20
+Date: Sat Aug 22 14:01:55 CEST 2026
+Walltime: 01-00:00:00
+========================================================================
+/staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v4/y035x200/RESULTS_EnKF_20160901_20170831/ /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v4/y035x200/FORCINGS
+Running MuSA: Distributed (multiprocessing)
+Launching 20 processes in 72 processors

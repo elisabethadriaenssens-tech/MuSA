@@ -1,0 +1,10 @@
+version: 5
+description: PBS, full winter 2016-17 (Sep-Aug), sites only
+
+uq_method: IP
+r_cov: dynamic_error
+obs_source: /staging/leuven/stg_00024/MSC_TMP/Snowshop/PREDICTIONS_Elisabeth
+obs_var_names: ["SD_Ensemble_Mean"]
+date_ini: "2016-09-01 00:00"
+date_end: "2017-08-31 23:00"
+da_algorithm: PBS
