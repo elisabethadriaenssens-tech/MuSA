@@ -1,0 +1,179 @@
+SLURM_JOB_ID: 62000901
+SLURM_JOB_USER: vsc37876
+SLURM_JOB_ACCOUNT: lp_ees_swm_ls_001
+SLURM_JOB_NAME: OL_v0_ensemble
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: m28c22n3
+SLURM_JOB_CPUS_PER_NODE: 20
+Date: Sun Sep 13 15:53:50 CEST 2026
+Walltime: 02-00:00:00
+========================================================================
+/staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v0/y035x200/RESULTS_OL_20160901_20170831/ /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v0/y035x200/FORCINGS
+Running FSM simulation: Distributed (multiprocessing)
+Launching 20 processes in 72 processors
+[CELL START] (150, 1) pid=258989
+[CELL START] (131, 6) pid=258976
+[CELL START] (37, 12) pid=258990
+[CELL START] (162, 16) pid=258984
+[CELL START] (70, 17) pid=258983
+[CELL START] (106, 17) pid=258975
+[CELL START] (189, 25) pid=258988
+[CELL START] (167, 30) pid=258992
+[CELL START] (166, 32) pid=258977
+[CELL START] (128, 37) pid=258981
+[CELL START] (8, 43) pid=258986
+[CELL START] (23, 44) pid=258974
+[CELL START] (69, 47) pid=258991
+[CELL START] (142, 49) pid=258982
+[CELL START] (167, 50) pid=258985
+[CELL START] (166, 53) pid=258979
+[CELL START] (154, 56) pid=258980
+[CELL START] (185, 59) pid=258978
+[CELL START] (163, 63) pid=258987
+[CELL START] (162, 65) pid=258993
+[CELL END] (166, 32) | total=0.677s | forcing load=0.230s | forcing check=0.000s | model=0.446s
+[CELL START] (191, 33) pid=258977
+[CELL END] (163, 63) | total=0.635s | forcing load=0.230s | forcing check=0.001s | model=0.405s
+[CELL START] (32, 65) pid=258987
+[CELL END] (162, 65) | total=0.635s | forcing load=0.230s | forcing check=0.000s | model=0.405s
+[CELL START] (143, 70) pid=258993
+[CELL END] (37, 12) | total=0.752s | forcing load=0.230s | forcing check=0.000s | model=0.521s
+[CELL START] (133, 16) pid=258990
+[CELL END] (70, 17) | total=0.716s | forcing load=0.221s | forcing check=0.001s | model=0.494s
+[CELL START] (104, 17) pid=258983
+[CELL END] (162, 16) | total=0.748s | forcing load=0.226s | forcing check=0.001s | model=0.522s
+[CELL END] (142, 49) | total=0.650s | forcing load=0.240s | forcing check=0.000s | model=0.409s
+[CELL START] (178, 16) pid=258984
+[CELL START] (182, 49) pid=258982
+[CELL END] (106, 17) | total=0.715s | forcing load=0.211s | forcing check=0.001s | model=0.504s
+[CELL START] (50, 24) pid=258975
+[CELL END] (167, 50) | total=0.643s | forcing load=0.236s | forcing check=0.000s | model=0.406s
+[CELL START] (168, 52) pid=258985
+[CELL END] (154, 56) | total=0.642s | forcing load=0.235s | forcing check=0.000s | model=0.406s
+[CELL START] (159, 57) pid=258980
+[CELL END] (185, 59) | total=0.638s | forcing load=0.233s | forcing check=0.000s | model=0.405s
+[CELL START] (130, 62) pid=258978
+[CELL END] (8, 43) | total=0.670s | forcing load=0.226s | forcing check=0.000s | model=0.443s
+[CELL START] (104, 43) pid=258986
+[CELL END] (69, 47) | total=0.661s | forcing load=0.240s | forcing check=0.000s | model=0.421s
+[CELL START] (141, 49) pid=258991
+[CELL END] (189, 25) | total=0.713s | forcing load=0.216s | forcing check=0.001s | model=0.497s
+[CELL START] (61, 30) pid=258988
+[CELL END] (128, 37) | total=0.679s | forcing load=0.227s | forcing check=0.000s | model=0.451s
+[CELL END] (166, 53) | total=0.652s | forcing load=0.235s | forcing check=0.000s | model=0.416s
+[CELL START] (37, 40) pid=258981
+[CELL START] (171, 53) pid=258979
+[CELL END] (23, 44) | total=0.670s | forcing load=0.222s | forcing check=0.000s | model=0.448s
+[CELL START] (24, 45) pid=258974
+[CELL END] (131, 6) | total=0.828s | forcing load=0.240s | forcing check=0.001s | model=0.588s
+[CELL START] (132, 7) pid=258976
+[CELL END] (150, 1) | total=0.830s | forcing load=0.230s | forcing check=0.000s | model=0.599s
+[CELL START] (151, 1) pid=258989
+[CELL END] (167, 30) | total=0.772s | forcing load=0.236s | forcing check=0.000s | model=0.535s
+[CELL START] (169, 30) pid=258992
+[CELL END] (143, 70) | total=0.234s | forcing load=0.110s | forcing check=0.001s | model=0.124s
+[CELL START] (152, 72) pid=258993
+[CELL END] (104, 17) | total=0.246s | forcing load=0.129s | forcing check=0.000s | model=0.117s
+[CELL START] (151, 73) pid=258983
+[CELL END] (50, 24) | total=0.248s | forcing load=0.127s | forcing check=0.000s | model=0.121s
+[CELL END] (159, 57) | total=0.248s | forcing load=0.129s | forcing check=0.000s | model=0.118s
+[CELL END] (130, 62) | total=0.247s | forcing load=0.133s | forcing check=0.000s | model=0.113s
+[CELL START] (168, 74) pid=258975
+[CELL START] (19, 78) pid=258980
+[CELL START] (174, 85) pid=258978
+[CELL END] (168, 52) | total=0.249s | forcing load=0.131s | forcing check=0.000s | model=0.118s
+[CELL START] (62, 99) pid=258985
+[CELL END] (171, 53) | total=0.243s | forcing load=0.125s | forcing check=0.000s | model=0.117s
+[CELL START] (128, 102) pid=258979
+[CELL END] (182, 49) | total=0.254s | forcing load=0.134s | forcing check=0.000s | model=0.119s
+[CELL START] (71, 113) pid=258982
+[CELL END] (61, 30) | total=0.247s | forcing load=0.124s | forcing check=0.000s | model=0.123s
+[CELL START] (185, 114) pid=258988
+[CELL END] (133, 16) | total=0.259s | forcing load=0.123s | forcing check=0.000s | model=0.135s
+[CELL START] (97, 121) pid=258990
+[CELL END] (32, 65) | total=0.265s | forcing load=0.149s | forcing check=0.000s | model=0.116s
+[CELL START] (59, 126) pid=258987
+[CELL END] (24, 45) | total=0.256s | forcing load=0.143s | forcing check=0.000s | model=0.113s
+[CELL START] (131, 134) pid=258974
+[CELL END] (141, 49) | total=0.264s | forcing load=0.133s | forcing check=0.000s | model=0.131s
+[CELL START] (178, 142) pid=258991
+[CELL END] (37, 40) | total=0.265s | forcing load=0.151s | forcing check=0.000s | model=0.114s
+[CELL START] (162, 147) pid=258981
+[CELL END] (151, 1) | total=0.202s | forcing load=0.104s | forcing check=0.000s | model=0.098s
+[CELL START] (98, 150) pid=258989
+[CELL END] (169, 30) | total=0.198s | forcing load=0.096s | forcing check=0.000s | model=0.102s
+[CELL START] (44, 151) pid=258992
+[CELL END] (191, 33) | total=0.295s | forcing load=0.127s | forcing check=0.000s | model=0.168s
+[CELL START] (167, 152) pid=258977
+[CELL END] (132, 7) | total=0.223s | forcing load=0.111s | forcing check=0.000s | model=0.112s
+[CELL START] (128, 159) pid=258976
+[CELL END] (178, 16) | total=0.311s | forcing load=0.128s | forcing check=0.000s | model=0.182s
+[CELL START] (72, 164) pid=258984
+[CELL END] (104, 43) | total=0.335s | forcing load=0.132s | forcing check=0.000s | model=0.203s
+[CELL START] (175, 167) pid=258986
+[CELL END] (151, 73) | total=0.299s | forcing load=0.183s | forcing check=0.000s | model=0.115s
+[CELL START] (152, 74) pid=258983
+[CELL END] (152, 72) | total=0.326s | forcing load=0.189s | forcing check=0.000s | model=0.136s
+[CELL START] (170, 72) pid=258993
+[CELL END] (128, 102) | total=0.307s | forcing load=0.192s | forcing check=0.000s | model=0.115s
+[CELL START] (131, 106) pid=258979
+[CELL END] (174, 85) | total=0.313s | forcing load=0.186s | forcing check=0.000s | model=0.127s
+[CELL START] (128, 94) pid=258978
+[CELL END] (19, 78) | total=0.322s | forcing load=0.196s | forcing check=0.000s | model=0.126s
+[CELL START] (156, 82) pid=258980
+[CELL END] (168, 74) | total=0.332s | forcing load=0.195s | forcing check=0.000s | model=0.136s
+[CELL START] (152, 75) pid=258975
+[CELL END] (185, 114) | total=0.326s | forcing load=0.210s | forcing check=0.000s | model=0.116s
+[CELL START] (98, 120) pid=258988
+[CELL END] (71, 113) | total=0.337s | forcing load=0.225s | forcing check=0.000s | model=0.112s
+[CELL START] (72, 113) pid=258982
+[CELL END] (97, 121) | total=0.341s | forcing load=0.198s | forcing check=0.000s | model=0.142s
+[CELL START] (82, 124) pid=258990
+[CELL END] (178, 142) | total=0.334s | forcing load=0.220s | forcing check=0.000s | model=0.113s
+[CELL START] (166, 143) pid=258991
+[CELL END] (44, 151) | total=0.324s | forcing load=0.206s | forcing check=0.000s | model=0.118s
+[CELL START] (44, 152) pid=258992
+[CELL END] (167, 152) | total=0.317s | forcing load=0.196s | forcing check=0.000s | model=0.121s
+[CELL START] (166, 153) pid=258977
+[CELL END] (98, 150) | total=0.335s | forcing load=0.207s | forcing check=0.000s | model=0.128s
+[CELL START] (162, 150) pid=258989
+[CELL END] (62, 99) | total=0.367s | forcing load=0.213s | forcing check=0.000s | model=0.154s
+[CELL START] (185, 99) pid=258985
+[CELL END] (131, 134) | total=0.355s | forcing load=0.187s | forcing check=0.000s | model=0.168s
+[CELL START] (98, 142) pid=258974
+[CELL END] (59, 126) | total=0.360s | forcing load=0.204s | forcing check=0.000s | model=0.156s
+[CELL START] (72, 134) pid=258987
+[CELL END] (162, 147) | total=0.355s | forcing load=0.209s | forcing check=0.000s | model=0.145s
+[CELL START] (98, 149) pid=258981
+[CELL END] (72, 164) | total=0.348s | forcing load=0.223s | forcing check=0.000s | model=0.124s
+[CELL START] (133, 164) pid=258984
+[CELL END] (128, 159) | total=0.407s | forcing load=0.226s | forcing check=0.000s | model=0.181s
+[CELL START] (71, 164) pid=258976
+[CELL END] (175, 167) | total=0.360s | forcing load=0.203s | forcing check=0.000s | model=0.156s
+[CELL START] (132, 175) pid=258986
+[CELL END] (131, 106) | total=0.203s | forcing load=0.104s | forcing check=0.001s | model=0.099s
+[CELL START] (185, 183) pid=258979
+[CELL END] (152, 75) | total=0.214s | forcing load=0.095s | forcing check=0.000s | model=0.118s
+[CELL END] (156, 82) | total=0.227s | forcing load=0.091s | forcing check=0.001s | model=0.135s
+[CELL END] (152, 74) | total=0.258s | forcing load=0.093s | forcing check=0.000s | model=0.165s
+[CELL END] (170, 72) | total=0.244s | forcing load=0.092s | forcing check=0.001s | model=0.151s
+[CELL END] (166, 153) | total=0.204s | forcing load=0.106s | forcing check=0.000s | model=0.098s
+[CELL END] (98, 120) | total=0.241s | forcing load=0.107s | forcing check=0.000s | model=0.134s
+[CELL END] (72, 113) | total=0.232s | forcing load=0.133s | forcing check=0.000s | model=0.099s
+[CELL END] (98, 149) | total=0.197s | forcing load=0.099s | forcing check=0.000s | model=0.098s
+[CELL END] (166, 143) | total=0.226s | forcing load=0.115s | forcing check=0.000s | model=0.111s
+[CELL END] (98, 142) | total=0.215s | forcing load=0.103s | forcing check=0.000s | model=0.111s
+[CELL END] (44, 152) | total=0.231s | forcing load=0.097s | forcing check=0.000s | model=0.134s
+[CELL END] (72, 134) | total=0.222s | forcing load=0.100s | forcing check=0.000s | model=0.121s
+[CELL END] (82, 124) | total=0.251s | forcing load=0.118s | forcing check=0.000s | model=0.132s
+[CELL END] (185, 99) | total=0.235s | forcing load=0.106s | forcing check=0.000s | model=0.129s
+[CELL END] (128, 94) | total=0.290s | forcing load=0.152s | forcing check=0.000s | model=0.138s
+[CELL END] (162, 150) | total=0.238s | forcing load=0.103s | forcing check=0.000s | model=0.134s
+[CELL END] (133, 164) | total=0.203s | forcing load=0.090s | forcing check=0.000s | model=0.113s
+[CELL END] (71, 164) | total=0.212s | forcing load=0.124s | forcing check=0.000s | model=0.088s
+[CELL END] (132, 175) | total=0.210s | forcing load=0.116s | forcing check=0.000s | model=0.093s
+[CELL END] (185, 183) | total=0.206s | forcing load=0.110s | forcing check=0.000s | model=0.096s
+[CELL START] (138, 185) pid=258979
+[CELL END] (138, 185) | total=0.219s | forcing load=0.085s | forcing check=0.000s | model=0.133s

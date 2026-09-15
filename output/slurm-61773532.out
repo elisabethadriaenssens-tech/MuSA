@@ -1,0 +1,47 @@
+SLURM_JOB_ID: 61773532
+SLURM_JOB_USER: vsc37876
+SLURM_JOB_ACCOUNT: lp_ees_swm_ls_001
+SLURM_JOB_NAME: DA_v5_PBS_year
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: p33c30n1
+SLURM_JOB_CPUS_PER_NODE: 20
+Date: Mon Aug 24 10:53:13 CEST 2026
+Walltime: 02-00:00:00
+========================================================================
+/staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v5/y035x200/RESULTS_PBS_20160901_20170831/ /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v5/y035x200/FORCINGS
+Running MuSA: Distributed (multiprocessing)
+Launching 20 processes in 72 processors
+Low Neff (1) found at cell: Lat:185, Lon:59
+Low Neff (1) found at cell: Lat:130, Lon:62
+Low Neff (1) found at cell: Lat:19, Lon:78
+Low Neff (1) found at cell: Lat:156, Lon:82
+No observations in: 178,16
+Low Neff (3) found at cell: Lat:152, Lon:72
+Low Neff (1) found at cell: Lat:170, Lon:72
+Low Neff (1) found at cell: Lat:23, Lon:44
+Low Neff (1) found at cell: Lat:24, Lon:45
+Low Neff (2) found at cell: Lat:168, Lon:74
+Low Neff (2) found at cell: Lat:152, Lon:75
+Low Neff (3) found at cell: Lat:162, Lon:65
+Low Neff (1) found at cell: Lat:143, Lon:70
+Low Neff (1) found at cell: Lat:62, Lon:99
+Low Neff (2) found at cell: Lat:185, Lon:99
+Low Neff (4) found at cell: Lat:128, Lon:37
+Low Neff (2) found at cell: Lat:37, Lon:40
+Low Neff (2) found at cell: Lat:98, Lon:149
+Low Neff (4) found at cell: Lat:191, Lon:33
+Low Neff (1) found at cell: Lat:174, Lon:85
+Low Neff (1) found at cell: Lat:128, Lon:94
+Low Neff (4) found at cell: Lat:150, Lon:1
+Low Neff (2) found at cell: Lat:151, Lon:1
+Low Neff (2) found at cell: Lat:128, Lon:102
+Low Neff (1) found at cell: Lat:131, Lon:106
+Low Neff (3) found at cell: Lat:69, Lon:47
+Low Neff (1) found at cell: Lat:141, Lon:49
+Low Neff (1) found at cell: Lat:98, Lon:150
+Low Neff (1) found at cell: Lat:154, Lon:56
+Low Neff (2) found at cell: Lat:159, Lon:57
+Low Neff (3) found at cell: Lat:178, Lon:142
+Low Neff (1) found at cell: Lat:166, Lon:143

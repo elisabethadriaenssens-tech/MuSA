@@ -1,0 +1,45 @@
+SLURM_JOB_ID: 62000900
+SLURM_JOB_USER: vsc37876
+SLURM_JOB_ACCOUNT: lp_ees_swm_ls_001
+SLURM_JOB_NAME: DA_v8_PBS_QR_DecMay
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: m28c22n3
+SLURM_JOB_CPUS_PER_NODE: 20
+Date: Sun Sep 13 15:53:40 CEST 2026
+Walltime: 02-00:00:00
+========================================================================
+/staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v8/y035x200/RESULTS_PBS_20160901_20170831/ /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v8/y035x200/FORCINGS
+Running MuSA: Distributed (multiprocessing)
+Launching 20 processes in 72 processors
+No observations in: 178,16
+Low Neff (3) found at cell: Lat:152, Lon:72
+Low Neff (3) found at cell: Lat:170, Lon:72
+Low Neff (3) found at cell: Lat:69, Lon:47
+Low Neff (5) found at cell: Lat:141, Lon:49
+Low Neff (1) found at cell: Lat:98, Lon:120
+Low Neff (1) found at cell: Lat:23, Lon:44
+Low Neff (1) found at cell: Lat:24, Lon:45
+Low Neff (3) found at cell: Lat:62, Lon:99
+Low Neff (6) found at cell: Lat:185, Lon:99
+Low Neff (3) found at cell: Lat:168, Lon:74
+Low Neff (2) found at cell: Lat:152, Lon:75
+Low Neff (1) found at cell: Lat:97, Lon:121
+Low Neff (1) found at cell: Lat:82, Lon:124
+Low Neff (5) found at cell: Lat:106, Lon:17
+Low Neff (1) found at cell: Lat:50, Lon:24
+Low Neff (2) found at cell: Lat:98, Lon:149
+Low Neff (1) found at cell: Lat:185, Lon:59
+Low Neff (6) found at cell: Lat:130, Lon:62
+Low Neff (2) found at cell: Lat:167, Lon:152
+Low Neff (4) found at cell: Lat:163, Lon:63
+Low Neff (2) found at cell: Lat:32, Lon:65
+Low Neff (1) found at cell: Lat:71, Lon:113
+Low Neff (1) found at cell: Lat:72, Lon:113
+Low Neff (2) found at cell: Lat:143, Lon:70
+Low Neff (1) found at cell: Lat:44, Lon:151
+Low Neff (1) found at cell: Lat:44, Lon:152
+Low Neff (1) found at cell: Lat:70, Lon:17
+Low Neff (2) found at cell: Lat:59, Lon:126
+Low Neff (1) found at cell: Lat:72, Lon:134

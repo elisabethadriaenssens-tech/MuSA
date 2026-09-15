@@ -1,0 +1,12 @@
+SLURM_JOB_ID: 61773275
+SLURM_JOB_USER: vsc37876
+SLURM_JOB_ACCOUNT: lp_ees_swm_ls_001
+SLURM_JOB_NAME: DA_v4_IP_year
+SLURM_CLUSTER_NAME: wice
+SLURM_JOB_PARTITION: batch
+SLURM_NNODES: 1
+SLURM_NODELIST: p33c27n4
+SLURM_JOB_CPUS_PER_NODE: 20
+Date: Mon Aug 24 10:53:07 CEST 2026
+Walltime: 02-00:00:00
+========================================================================

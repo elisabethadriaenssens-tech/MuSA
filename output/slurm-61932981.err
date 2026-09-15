@@ -1,0 +1,483 @@
+Lmod has detected the following error: These module(s) or extension(s) exist
+but cannot be loaded as requested: "GCC"
+   Try: "module spider GCC" to see how to load the module(s).
+
+
+
+Lmod has detected the following error: These module(s) or extension(s) exist
+but cannot be loaded as requested: "Miniconda3"
+   Try: "module spider Miniconda3" to see how to load the module(s).
+
+
+
+Found forcing zarr files in /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/FORCINGS. Checking for the specified date range: 2016-09-01 00:00 to 2017-08-31 23:00
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20160901.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20160905.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 790680, 'SD_Ensemble_Std': 790680, 'SD_Q25': 790680, 'SD_Q50': 790680, 'SD_Q75': 790680} -> {'SD_Ensemble_Mean': 31591, 'SD_Ensemble_Std': 31591, 'SD_Q25': 31591, 'SD_Q50': 31591, 'SD_Q75': 31591}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20160908.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889740, 'SD_Ensemble_Std': 889740, 'SD_Q25': 889740, 'SD_Q50': 889740, 'SD_Q75': 889740} -> {'SD_Ensemble_Mean': 35553, 'SD_Ensemble_Std': 35553, 'SD_Q25': 35553, 'SD_Q50': 35553, 'SD_Q75': 35553}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20160912.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20160913.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20160917.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 790305, 'SD_Ensemble_Std': 790305, 'SD_Q25': 790305, 'SD_Q50': 790305, 'SD_Q75': 790305} -> {'SD_Ensemble_Mean': 31576, 'SD_Ensemble_Std': 31576, 'SD_Q25': 31576, 'SD_Q50': 31576, 'SD_Q75': 31576}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20160920.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889790, 'SD_Ensemble_Std': 889790, 'SD_Q25': 889790, 'SD_Q50': 889790, 'SD_Q75': 889790} -> {'SD_Ensemble_Mean': 35555, 'SD_Ensemble_Std': 35555, 'SD_Q25': 35555, 'SD_Q50': 35555, 'SD_Q75': 35555}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20160924.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20160925.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20160926.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889740, 'SD_Ensemble_Std': 889740, 'SD_Q25': 889740, 'SD_Q50': 889740, 'SD_Q75': 889740} -> {'SD_Ensemble_Mean': 35553, 'SD_Ensemble_Std': 35553, 'SD_Q25': 35553, 'SD_Q50': 35553, 'SD_Q75': 35553}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20160929.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 790030, 'SD_Ensemble_Std': 790030, 'SD_Q25': 790030, 'SD_Q50': 790030, 'SD_Q75': 790030} -> {'SD_Ensemble_Mean': 31565, 'SD_Ensemble_Std': 31565, 'SD_Q25': 31565, 'SD_Q50': 31565, 'SD_Q75': 31565}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20160930.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 458, 'SD_Ensemble_Std': 458, 'SD_Q25': 458, 'SD_Q50': 458, 'SD_Q75': 458}
+[PrepareObsTile] sd_20161001.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 322355, 'SD_Ensemble_Std': 322355, 'SD_Q25': 322355, 'SD_Q50': 322355, 'SD_Q75': 322355} -> {'SD_Ensemble_Mean': 12866, 'SD_Ensemble_Std': 12866, 'SD_Q25': 12866, 'SD_Q50': 12866, 'SD_Q75': 12866}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 112, 'SD_Ensemble_Std': 112, 'SD_Q25': 112, 'SD_Q50': 112, 'SD_Q75': 112}
+[PrepareObsTile] sd_20161002.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889515, 'SD_Ensemble_Std': 889515, 'SD_Q25': 889515, 'SD_Q50': 889515, 'SD_Q75': 889515} -> {'SD_Ensemble_Mean': 35544, 'SD_Ensemble_Std': 35544, 'SD_Q25': 35544, 'SD_Q50': 35544, 'SD_Q75': 35544}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20161006.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20161007.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20161011.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 790955, 'SD_Ensemble_Std': 790955, 'SD_Q25': 790955, 'SD_Q50': 790955, 'SD_Q75': 790955} -> {'SD_Ensemble_Mean': 31602, 'SD_Ensemble_Std': 31602, 'SD_Q25': 31602, 'SD_Q50': 31602, 'SD_Q75': 31602}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 112, 'SD_Ensemble_Std': 112, 'SD_Q25': 112, 'SD_Q50': 112, 'SD_Q75': 112}
+[PrepareObsTile] sd_20161014.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889665, 'SD_Ensemble_Std': 889665, 'SD_Q25': 889665, 'SD_Q50': 889665, 'SD_Q75': 889665} -> {'SD_Ensemble_Mean': 35550, 'SD_Ensemble_Std': 35550, 'SD_Q25': 35550, 'SD_Q50': 35550, 'SD_Q75': 35550}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20161018.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20161019.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20161023.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 791705, 'SD_Ensemble_Std': 791705, 'SD_Q25': 791705, 'SD_Q50': 791705, 'SD_Q75': 791705} -> {'SD_Ensemble_Mean': 31632, 'SD_Ensemble_Std': 31632, 'SD_Q25': 31632, 'SD_Q50': 31632, 'SD_Q75': 31632}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 110, 'SD_Ensemble_Std': 110, 'SD_Q25': 110, 'SD_Q50': 110, 'SD_Q75': 110}
+[PrepareObsTile] sd_20161026.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889865, 'SD_Ensemble_Std': 889865, 'SD_Q25': 889865, 'SD_Q50': 889865, 'SD_Q75': 889865} -> {'SD_Ensemble_Mean': 35558, 'SD_Ensemble_Std': 35558, 'SD_Q25': 35558, 'SD_Q50': 35558, 'SD_Q75': 35558}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20161030.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20161031.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20161104.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 790930, 'SD_Ensemble_Std': 790930, 'SD_Q25': 790930, 'SD_Q50': 790930, 'SD_Q75': 790930} -> {'SD_Ensemble_Mean': 31601, 'SD_Ensemble_Std': 31601, 'SD_Q25': 31601, 'SD_Q50': 31601, 'SD_Q75': 31601}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 108, 'SD_Ensemble_Std': 108, 'SD_Q25': 108, 'SD_Q50': 108, 'SD_Q75': 108}
+[PrepareObsTile] sd_20161107.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 890140, 'SD_Ensemble_Std': 890140, 'SD_Q25': 890140, 'SD_Q50': 890140, 'SD_Q75': 890140} -> {'SD_Ensemble_Mean': 35569, 'SD_Ensemble_Std': 35569, 'SD_Q25': 35569, 'SD_Q50': 35569, 'SD_Q75': 35569}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20161111.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20161112.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20161116.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 790730, 'SD_Ensemble_Std': 790730, 'SD_Q25': 790730, 'SD_Q50': 790730, 'SD_Q75': 790730} -> {'SD_Ensemble_Mean': 31593, 'SD_Ensemble_Std': 31593, 'SD_Q25': 31593, 'SD_Q50': 31593, 'SD_Q75': 31593}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 108, 'SD_Ensemble_Std': 108, 'SD_Q25': 108, 'SD_Q50': 108, 'SD_Q75': 108}
+[PrepareObsTile] sd_20161119.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 890240, 'SD_Ensemble_Std': 890240, 'SD_Q25': 890240, 'SD_Q50': 890240, 'SD_Q75': 890240} -> {'SD_Ensemble_Mean': 35573, 'SD_Ensemble_Std': 35573, 'SD_Q25': 35573, 'SD_Q50': 35573, 'SD_Q75': 35573}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20161124.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20161128.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 790705, 'SD_Ensemble_Std': 790705, 'SD_Q25': 790705, 'SD_Q50': 790705, 'SD_Q75': 790705} -> {'SD_Ensemble_Mean': 31592, 'SD_Ensemble_Std': 31592, 'SD_Q25': 31592, 'SD_Q50': 31592, 'SD_Q75': 31592}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20161201.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889790, 'SD_Ensemble_Std': 889790, 'SD_Q25': 889790, 'SD_Q50': 889790, 'SD_Q75': 889790} -> {'SD_Ensemble_Mean': 35555, 'SD_Ensemble_Std': 35555, 'SD_Q25': 35555, 'SD_Q50': 35555, 'SD_Q75': 35555}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20161205.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20161206.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20161210.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 791605, 'SD_Ensemble_Std': 791605, 'SD_Q25': 791605, 'SD_Q50': 791605, 'SD_Q75': 791605} -> {'SD_Ensemble_Mean': 31628, 'SD_Ensemble_Std': 31628, 'SD_Q25': 31628, 'SD_Q50': 31628, 'SD_Q75': 31628}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 112, 'SD_Ensemble_Std': 112, 'SD_Q25': 112, 'SD_Q50': 112, 'SD_Q75': 112}
+[PrepareObsTile] sd_20161213.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889615, 'SD_Ensemble_Std': 889615, 'SD_Q25': 889615, 'SD_Q50': 889615, 'SD_Q75': 889615} -> {'SD_Ensemble_Mean': 35548, 'SD_Ensemble_Std': 35548, 'SD_Q25': 35548, 'SD_Q50': 35548, 'SD_Q75': 35548}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20161217.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20161218.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20161222.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 791655, 'SD_Ensemble_Std': 791655, 'SD_Q25': 791655, 'SD_Q50': 791655, 'SD_Q75': 791655} -> {'SD_Ensemble_Mean': 31630, 'SD_Ensemble_Std': 31630, 'SD_Q25': 31630, 'SD_Q50': 31630, 'SD_Q75': 31630}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 110, 'SD_Ensemble_Std': 110, 'SD_Q25': 110, 'SD_Q50': 110, 'SD_Q75': 110}
+[PrepareObsTile] sd_20161225.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889815, 'SD_Ensemble_Std': 889815, 'SD_Q25': 889815, 'SD_Q50': 889815, 'SD_Q75': 889815} -> {'SD_Ensemble_Mean': 35556, 'SD_Ensemble_Std': 35556, 'SD_Q25': 35556, 'SD_Q50': 35556, 'SD_Q75': 35556}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20161229.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20161230.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20170103.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 791455, 'SD_Ensemble_Std': 791455, 'SD_Q25': 791455, 'SD_Q50': 791455, 'SD_Q75': 791455} -> {'SD_Ensemble_Mean': 31622, 'SD_Ensemble_Std': 31622, 'SD_Q25': 31622, 'SD_Q50': 31622, 'SD_Q75': 31622}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 109, 'SD_Ensemble_Std': 109, 'SD_Q25': 109, 'SD_Q50': 109, 'SD_Q75': 109}
+[PrepareObsTile] sd_20170106.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 890015, 'SD_Ensemble_Std': 890015, 'SD_Q25': 890015, 'SD_Q50': 890015, 'SD_Q75': 890015} -> {'SD_Ensemble_Mean': 35564, 'SD_Ensemble_Std': 35564, 'SD_Q25': 35564, 'SD_Q50': 35564, 'SD_Q75': 35564}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170110.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20170111.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20170115.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 790955, 'SD_Ensemble_Std': 790955, 'SD_Q25': 790955, 'SD_Q50': 790955, 'SD_Q75': 790955} -> {'SD_Ensemble_Mean': 31602, 'SD_Ensemble_Std': 31602, 'SD_Q25': 31602, 'SD_Q50': 31602, 'SD_Q75': 31602}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 109, 'SD_Ensemble_Std': 109, 'SD_Q25': 109, 'SD_Q50': 109, 'SD_Q75': 109}
+[PrepareObsTile] sd_20170118.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889990, 'SD_Ensemble_Std': 889990, 'SD_Q25': 889990, 'SD_Q50': 889990, 'SD_Q75': 889990} -> {'SD_Ensemble_Mean': 35563, 'SD_Ensemble_Std': 35563, 'SD_Q25': 35563, 'SD_Q50': 35563, 'SD_Q75': 35563}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20170123.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20170127.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 790480, 'SD_Ensemble_Std': 790480, 'SD_Q25': 790480, 'SD_Q50': 790480, 'SD_Q75': 790480} -> {'SD_Ensemble_Mean': 31583, 'SD_Ensemble_Std': 31583, 'SD_Q25': 31583, 'SD_Q50': 31583, 'SD_Q75': 31583}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 110, 'SD_Ensemble_Std': 110, 'SD_Q25': 110, 'SD_Q50': 110, 'SD_Q75': 110}
+[PrepareObsTile] sd_20170130.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889965, 'SD_Ensemble_Std': 889965, 'SD_Q25': 889965, 'SD_Q50': 889965, 'SD_Q75': 889965} -> {'SD_Ensemble_Mean': 35562, 'SD_Ensemble_Std': 35562, 'SD_Q25': 35562, 'SD_Q50': 35562, 'SD_Q75': 35562}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170203.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20170204.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20170208.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 790530, 'SD_Ensemble_Std': 790530, 'SD_Q25': 790530, 'SD_Q50': 790530, 'SD_Q75': 790530} -> {'SD_Ensemble_Mean': 31585, 'SD_Ensemble_Std': 31585, 'SD_Q25': 31585, 'SD_Q50': 31585, 'SD_Q75': 31585}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170211.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889740, 'SD_Ensemble_Std': 889740, 'SD_Q25': 889740, 'SD_Q50': 889740, 'SD_Q75': 889740} -> {'SD_Ensemble_Mean': 35553, 'SD_Ensemble_Std': 35553, 'SD_Q25': 35553, 'SD_Q50': 35553, 'SD_Q75': 35553}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170215.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20170216.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20170220.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 791555, 'SD_Ensemble_Std': 791555, 'SD_Q25': 791555, 'SD_Q50': 791555, 'SD_Q75': 791555} -> {'SD_Ensemble_Mean': 31626, 'SD_Ensemble_Std': 31626, 'SD_Q25': 31626, 'SD_Q50': 31626, 'SD_Q75': 31626}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170223.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889765, 'SD_Ensemble_Std': 889765, 'SD_Q25': 889765, 'SD_Q50': 889765, 'SD_Q75': 889765} -> {'SD_Ensemble_Mean': 35554, 'SD_Ensemble_Std': 35554, 'SD_Q25': 35554, 'SD_Q50': 35554, 'SD_Q75': 35554}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170227.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20170228.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20170304.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 791880, 'SD_Ensemble_Std': 791880, 'SD_Q25': 791880, 'SD_Q50': 791880, 'SD_Q75': 791880} -> {'SD_Ensemble_Mean': 31639, 'SD_Ensemble_Std': 31639, 'SD_Q25': 31639, 'SD_Q50': 31639, 'SD_Q75': 31639}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20170306.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170307.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889790, 'SD_Ensemble_Std': 889790, 'SD_Q25': 889790, 'SD_Q50': 889790, 'SD_Q75': 889790} -> {'SD_Ensemble_Mean': 35555, 'SD_Ensemble_Std': 35555, 'SD_Q25': 35555, 'SD_Q50': 35555, 'SD_Q75': 35555}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170310.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 789105, 'SD_Ensemble_Std': 789105, 'SD_Q25': 789105, 'SD_Q50': 789105, 'SD_Q75': 789105} -> {'SD_Ensemble_Mean': 31528, 'SD_Ensemble_Std': 31528, 'SD_Q25': 31528, 'SD_Q50': 31528, 'SD_Q75': 31528}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170311.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20170312.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 112, 'SD_Ensemble_Std': 112, 'SD_Q25': 112, 'SD_Q50': 112, 'SD_Q75': 112}
+[PrepareObsTile] sd_20170313.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889740, 'SD_Ensemble_Std': 889740, 'SD_Q25': 889740, 'SD_Q50': 889740, 'SD_Q75': 889740} -> {'SD_Ensemble_Mean': 35553, 'SD_Ensemble_Std': 35553, 'SD_Q25': 35553, 'SD_Q50': 35553, 'SD_Q75': 35553}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20170316.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 790230, 'SD_Ensemble_Std': 790230, 'SD_Q25': 790230, 'SD_Q50': 790230, 'SD_Q75': 790230} -> {'SD_Ensemble_Mean': 31573, 'SD_Ensemble_Std': 31573, 'SD_Q25': 31573, 'SD_Q50': 31573, 'SD_Q75': 31573}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170317.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20170318.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 110, 'SD_Ensemble_Std': 110, 'SD_Q25': 110, 'SD_Q50': 110, 'SD_Q75': 110}
+[PrepareObsTile] sd_20170319.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889940, 'SD_Ensemble_Std': 889940, 'SD_Q25': 889940, 'SD_Q50': 889940, 'SD_Q75': 889940} -> {'SD_Ensemble_Mean': 35561, 'SD_Ensemble_Std': 35561, 'SD_Q25': 35561, 'SD_Q50': 35561, 'SD_Q75': 35561}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170323.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 31, 'SD_Ensemble_Std': 31, 'SD_Q25': 31, 'SD_Q50': 31, 'SD_Q75': 31}
+[PrepareObsTile] sd_20170324.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 112, 'SD_Ensemble_Std': 112, 'SD_Q25': 112, 'SD_Q50': 112, 'SD_Q75': 112}
+[PrepareObsTile] sd_20170325.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889640, 'SD_Ensemble_Std': 889640, 'SD_Q25': 889640, 'SD_Q50': 889640, 'SD_Q75': 889640} -> {'SD_Ensemble_Mean': 35549, 'SD_Ensemble_Std': 35549, 'SD_Q25': 35549, 'SD_Q50': 35549, 'SD_Q75': 35549}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20170328.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 789455, 'SD_Ensemble_Std': 789455, 'SD_Q25': 789455, 'SD_Q50': 789455, 'SD_Q75': 789455} -> {'SD_Ensemble_Mean': 31542, 'SD_Ensemble_Std': 31542, 'SD_Q25': 31542, 'SD_Q50': 31542, 'SD_Q75': 31542}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 30, 'SD_Ensemble_Std': 30, 'SD_Q25': 30, 'SD_Q50': 30, 'SD_Q75': 30}
+[PrepareObsTile] sd_20170329.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 34, 'SD_Ensemble_Std': 34, 'SD_Q25': 34, 'SD_Q50': 34, 'SD_Q75': 34}
+[PrepareObsTile] sd_20170330.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905555, 'SD_Ensemble_Std': 905555, 'SD_Q25': 905555, 'SD_Q50': 905555, 'SD_Q75': 905555} -> {'SD_Ensemble_Mean': 36186, 'SD_Ensemble_Std': 36186, 'SD_Q25': 36186, 'SD_Q50': 36186, 'SD_Q75': 36186}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170331.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889790, 'SD_Ensemble_Std': 889790, 'SD_Q25': 889790, 'SD_Q50': 889790, 'SD_Q75': 889790} -> {'SD_Ensemble_Mean': 35555, 'SD_Ensemble_Std': 35555, 'SD_Q25': 35555, 'SD_Q50': 35555, 'SD_Q75': 35555}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170403.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 789380, 'SD_Ensemble_Std': 789380, 'SD_Q25': 789380, 'SD_Q50': 789380, 'SD_Q75': 789380} -> {'SD_Ensemble_Mean': 31539, 'SD_Ensemble_Std': 31539, 'SD_Q25': 31539, 'SD_Q50': 31539, 'SD_Q75': 31539}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 30, 'SD_Ensemble_Std': 30, 'SD_Q25': 30, 'SD_Q50': 30, 'SD_Q75': 30}
+[PrepareObsTile] sd_20170404.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 32, 'SD_Ensemble_Std': 32, 'SD_Q25': 32, 'SD_Q50': 32, 'SD_Q75': 32}
+[PrepareObsTile] sd_20170405.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905580, 'SD_Ensemble_Std': 905580, 'SD_Q25': 905580, 'SD_Q50': 905580, 'SD_Q75': 905580} -> {'SD_Ensemble_Mean': 36187, 'SD_Ensemble_Std': 36187, 'SD_Q25': 36187, 'SD_Q50': 36187, 'SD_Q75': 36187}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170406.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889765, 'SD_Ensemble_Std': 889765, 'SD_Q25': 889765, 'SD_Q50': 889765, 'SD_Q75': 889765} -> {'SD_Ensemble_Mean': 35554, 'SD_Ensemble_Std': 35554, 'SD_Q25': 35554, 'SD_Q50': 35554, 'SD_Q75': 35554}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20170409.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 789680, 'SD_Ensemble_Std': 789680, 'SD_Q25': 789680, 'SD_Q50': 789680, 'SD_Q75': 789680} -> {'SD_Ensemble_Mean': 31551, 'SD_Ensemble_Std': 31551, 'SD_Q25': 31551, 'SD_Q50': 31551, 'SD_Q75': 31551}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 30, 'SD_Ensemble_Std': 30, 'SD_Q25': 30, 'SD_Q50': 30, 'SD_Q75': 30}
+[PrepareObsTile] sd_20170410.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 34, 'SD_Ensemble_Std': 34, 'SD_Q25': 34, 'SD_Q50': 34, 'SD_Q75': 34}
+[PrepareObsTile] sd_20170411.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905555, 'SD_Ensemble_Std': 905555, 'SD_Q25': 905555, 'SD_Q50': 905555, 'SD_Q75': 905555} -> {'SD_Ensemble_Mean': 36186, 'SD_Ensemble_Std': 36186, 'SD_Q25': 36186, 'SD_Q50': 36186, 'SD_Q75': 36186}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170412.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889640, 'SD_Ensemble_Std': 889640, 'SD_Q25': 889640, 'SD_Q50': 889640, 'SD_Q75': 889640} -> {'SD_Ensemble_Mean': 35549, 'SD_Ensemble_Std': 35549, 'SD_Q25': 35549, 'SD_Q50': 35549, 'SD_Q75': 35549}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170415.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 789230, 'SD_Ensemble_Std': 789230, 'SD_Q25': 789230, 'SD_Q50': 789230, 'SD_Q75': 789230} -> {'SD_Ensemble_Mean': 31533, 'SD_Ensemble_Std': 31533, 'SD_Q25': 31533, 'SD_Q50': 31533, 'SD_Q75': 31533}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 30, 'SD_Ensemble_Std': 30, 'SD_Q25': 30, 'SD_Q50': 30, 'SD_Q75': 30}
+[PrepareObsTile] sd_20170416.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 32, 'SD_Ensemble_Std': 32, 'SD_Q25': 32, 'SD_Q50': 32, 'SD_Q75': 32}
+[PrepareObsTile] sd_20170417.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905580, 'SD_Ensemble_Std': 905580, 'SD_Q25': 905580, 'SD_Q50': 905580, 'SD_Q75': 905580} -> {'SD_Ensemble_Mean': 36187, 'SD_Ensemble_Std': 36187, 'SD_Q25': 36187, 'SD_Q50': 36187, 'SD_Q75': 36187}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170418.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889790, 'SD_Ensemble_Std': 889790, 'SD_Q25': 889790, 'SD_Q50': 889790, 'SD_Q75': 889790} -> {'SD_Ensemble_Mean': 35555, 'SD_Ensemble_Std': 35555, 'SD_Q25': 35555, 'SD_Q50': 35555, 'SD_Q75': 35555}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20170421.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 790280, 'SD_Ensemble_Std': 790280, 'SD_Q25': 790280, 'SD_Q50': 790280, 'SD_Q75': 790280} -> {'SD_Ensemble_Mean': 31575, 'SD_Ensemble_Std': 31575, 'SD_Q25': 31575, 'SD_Q50': 31575, 'SD_Q75': 31575}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 30, 'SD_Ensemble_Std': 30, 'SD_Q25': 30, 'SD_Q50': 30, 'SD_Q75': 30}
+[PrepareObsTile] sd_20170422.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 34, 'SD_Ensemble_Std': 34, 'SD_Q25': 34, 'SD_Q50': 34, 'SD_Q75': 34}
+[PrepareObsTile] sd_20170423.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905555, 'SD_Ensemble_Std': 905555, 'SD_Q25': 905555, 'SD_Q50': 905555, 'SD_Q75': 905555} -> {'SD_Ensemble_Mean': 36186, 'SD_Ensemble_Std': 36186, 'SD_Q25': 36186, 'SD_Q50': 36186, 'SD_Q75': 36186}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170424.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889540, 'SD_Ensemble_Std': 889540, 'SD_Q25': 889540, 'SD_Q50': 889540, 'SD_Q75': 889540} -> {'SD_Ensemble_Mean': 35545, 'SD_Ensemble_Std': 35545, 'SD_Q25': 35545, 'SD_Q50': 35545, 'SD_Q75': 35545}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170427.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 788655, 'SD_Ensemble_Std': 788655, 'SD_Q25': 788655, 'SD_Q50': 788655, 'SD_Q75': 788655} -> {'SD_Ensemble_Mean': 31510, 'SD_Ensemble_Std': 31510, 'SD_Q25': 31510, 'SD_Q50': 31510, 'SD_Q75': 31510}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 30, 'SD_Ensemble_Std': 30, 'SD_Q25': 30, 'SD_Q50': 30, 'SD_Q75': 30}
+[PrepareObsTile] sd_20170428.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 32, 'SD_Ensemble_Std': 32, 'SD_Q25': 32, 'SD_Q50': 32, 'SD_Q75': 32}
+[PrepareObsTile] sd_20170429.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905580, 'SD_Ensemble_Std': 905580, 'SD_Q25': 905580, 'SD_Q50': 905580, 'SD_Q75': 905580} -> {'SD_Ensemble_Mean': 36187, 'SD_Ensemble_Std': 36187, 'SD_Q25': 36187, 'SD_Q50': 36187, 'SD_Q75': 36187}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 112, 'SD_Ensemble_Std': 112, 'SD_Q25': 112, 'SD_Q50': 112, 'SD_Q75': 112}
+[PrepareObsTile] sd_20170430.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889715, 'SD_Ensemble_Std': 889715, 'SD_Q25': 889715, 'SD_Q50': 889715, 'SD_Q75': 889715} -> {'SD_Ensemble_Mean': 35552, 'SD_Ensemble_Std': 35552, 'SD_Q25': 35552, 'SD_Q50': 35552, 'SD_Q75': 35552}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20170503.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 789930, 'SD_Ensemble_Std': 789930, 'SD_Q25': 789930, 'SD_Q50': 789930, 'SD_Q75': 789930} -> {'SD_Ensemble_Mean': 31561, 'SD_Ensemble_Std': 31561, 'SD_Q25': 31561, 'SD_Q50': 31561, 'SD_Q75': 31561}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 30, 'SD_Ensemble_Std': 30, 'SD_Q25': 30, 'SD_Q50': 30, 'SD_Q75': 30}
+[PrepareObsTile] sd_20170504.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 34, 'SD_Ensemble_Std': 34, 'SD_Q25': 34, 'SD_Q50': 34, 'SD_Q75': 34}
+[PrepareObsTile] sd_20170505.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905555, 'SD_Ensemble_Std': 905555, 'SD_Q25': 905555, 'SD_Q50': 905555, 'SD_Q75': 905555} -> {'SD_Ensemble_Mean': 36186, 'SD_Ensemble_Std': 36186, 'SD_Q25': 36186, 'SD_Q50': 36186, 'SD_Q75': 36186}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170506.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889790, 'SD_Ensemble_Std': 889790, 'SD_Q25': 889790, 'SD_Q50': 889790, 'SD_Q75': 889790} -> {'SD_Ensemble_Mean': 35555, 'SD_Ensemble_Std': 35555, 'SD_Q25': 35555, 'SD_Q50': 35555, 'SD_Q75': 35555}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170509.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 792755, 'SD_Ensemble_Std': 792755, 'SD_Q25': 792755, 'SD_Q50': 792755, 'SD_Q75': 792755} -> {'SD_Ensemble_Mean': 31674, 'SD_Ensemble_Std': 31674, 'SD_Q25': 31674, 'SD_Q50': 31674, 'SD_Q75': 31674}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 30, 'SD_Ensemble_Std': 30, 'SD_Q25': 30, 'SD_Q50': 30, 'SD_Q75': 30}
+[PrepareObsTile] sd_20170510.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 32, 'SD_Ensemble_Std': 32, 'SD_Q25': 32, 'SD_Q50': 32, 'SD_Q75': 32}
+[PrepareObsTile] sd_20170511.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905580, 'SD_Ensemble_Std': 905580, 'SD_Q25': 905580, 'SD_Q50': 905580, 'SD_Q75': 905580} -> {'SD_Ensemble_Mean': 36187, 'SD_Ensemble_Std': 36187, 'SD_Q25': 36187, 'SD_Q50': 36187, 'SD_Q75': 36187}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 112, 'SD_Ensemble_Std': 112, 'SD_Q25': 112, 'SD_Q50': 112, 'SD_Q75': 112}
+[PrepareObsTile] sd_20170512.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889540, 'SD_Ensemble_Std': 889540, 'SD_Q25': 889540, 'SD_Q50': 889540, 'SD_Q75': 889540} -> {'SD_Ensemble_Mean': 35545, 'SD_Ensemble_Std': 35545, 'SD_Q25': 35545, 'SD_Q50': 35545, 'SD_Q75': 35545}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 247, 'SD_Ensemble_Std': 247, 'SD_Q25': 247, 'SD_Q50': 247, 'SD_Q75': 247}
+[PrepareObsTile] sd_20170515.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 790130, 'SD_Ensemble_Std': 790130, 'SD_Q25': 790130, 'SD_Q50': 790130, 'SD_Q75': 790130} -> {'SD_Ensemble_Mean': 31569, 'SD_Ensemble_Std': 31569, 'SD_Q25': 31569, 'SD_Q50': 31569, 'SD_Q75': 31569}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170516.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 34, 'SD_Ensemble_Std': 34, 'SD_Q25': 34, 'SD_Q50': 34, 'SD_Q75': 34}
+[PrepareObsTile] sd_20170517.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905555, 'SD_Ensemble_Std': 905555, 'SD_Q25': 905555, 'SD_Q50': 905555, 'SD_Q75': 905555} -> {'SD_Ensemble_Mean': 36186, 'SD_Ensemble_Std': 36186, 'SD_Q25': 36186, 'SD_Q50': 36186, 'SD_Q75': 36186}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170518.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889790, 'SD_Ensemble_Std': 889790, 'SD_Q25': 889790, 'SD_Q50': 889790, 'SD_Q75': 889790} -> {'SD_Ensemble_Mean': 35555, 'SD_Ensemble_Std': 35555, 'SD_Q25': 35555, 'SD_Q50': 35555, 'SD_Q75': 35555}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170521.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 793280, 'SD_Ensemble_Std': 793280, 'SD_Q25': 793280, 'SD_Q50': 793280, 'SD_Q75': 793280} -> {'SD_Ensemble_Mean': 31695, 'SD_Ensemble_Std': 31695, 'SD_Q25': 31695, 'SD_Q50': 31695, 'SD_Q75': 31695}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 30, 'SD_Ensemble_Std': 30, 'SD_Q25': 30, 'SD_Q50': 30, 'SD_Q75': 30}
+[PrepareObsTile] sd_20170522.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905605, 'SD_Ensemble_Std': 905605, 'SD_Q25': 905605, 'SD_Q50': 905605, 'SD_Q75': 905605} -> {'SD_Ensemble_Mean': 36188, 'SD_Ensemble_Std': 36188, 'SD_Q25': 36188, 'SD_Q50': 36188, 'SD_Q75': 36188}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170523.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 112, 'SD_Ensemble_Std': 112, 'SD_Q25': 112, 'SD_Q50': 112, 'SD_Q75': 112}
+[PrepareObsTile] sd_20170524.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889390, 'SD_Ensemble_Std': 889390, 'SD_Q25': 889390, 'SD_Q50': 889390, 'SD_Q75': 889390} -> {'SD_Ensemble_Mean': 35539, 'SD_Ensemble_Std': 35539, 'SD_Q25': 35539, 'SD_Q50': 35539, 'SD_Q75': 35539}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170527.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 792755, 'SD_Ensemble_Std': 792755, 'SD_Q25': 792755, 'SD_Q50': 792755, 'SD_Q75': 792755} -> {'SD_Ensemble_Mean': 31674, 'SD_Ensemble_Std': 31674, 'SD_Q25': 31674, 'SD_Q50': 31674, 'SD_Q75': 31674}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170528.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 34, 'SD_Ensemble_Std': 34, 'SD_Q25': 34, 'SD_Q50': 34, 'SD_Q75': 34}
+[PrepareObsTile] sd_20170529.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905555, 'SD_Ensemble_Std': 905555, 'SD_Q25': 905555, 'SD_Q50': 905555, 'SD_Q75': 905555} -> {'SD_Ensemble_Mean': 36186, 'SD_Ensemble_Std': 36186, 'SD_Q25': 36186, 'SD_Q50': 36186, 'SD_Q75': 36186}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170530.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889640, 'SD_Ensemble_Std': 889640, 'SD_Q25': 889640, 'SD_Q50': 889640, 'SD_Q75': 889640} -> {'SD_Ensemble_Mean': 35549, 'SD_Ensemble_Std': 35549, 'SD_Q25': 35549, 'SD_Q50': 35549, 'SD_Q75': 35549}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170602.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 795555, 'SD_Ensemble_Std': 795555, 'SD_Q25': 795555, 'SD_Q50': 795555, 'SD_Q75': 795555} -> {'SD_Ensemble_Mean': 31786, 'SD_Ensemble_Std': 31786, 'SD_Q25': 31786, 'SD_Q50': 31786, 'SD_Q75': 31786}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170603.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170604.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 112, 'SD_Ensemble_Std': 112, 'SD_Q25': 112, 'SD_Q50': 112, 'SD_Q75': 112}
+[PrepareObsTile] sd_20170605.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889590, 'SD_Ensemble_Std': 889590, 'SD_Q25': 889590, 'SD_Q50': 889590, 'SD_Q75': 889590} -> {'SD_Ensemble_Mean': 35547, 'SD_Ensemble_Std': 35547, 'SD_Q25': 35547, 'SD_Q50': 35547, 'SD_Q75': 35547}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170608.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 788605, 'SD_Ensemble_Std': 788605, 'SD_Q25': 788605, 'SD_Q50': 788605, 'SD_Q75': 788605} -> {'SD_Ensemble_Mean': 31508, 'SD_Ensemble_Std': 31508, 'SD_Q25': 31508, 'SD_Q50': 31508, 'SD_Q75': 31508}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 36, 'SD_Ensemble_Std': 36, 'SD_Q25': 36, 'SD_Q50': 36, 'SD_Q75': 36}
+[PrepareObsTile] sd_20170609.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905430, 'SD_Ensemble_Std': 905430, 'SD_Q25': 905430, 'SD_Q50': 905430, 'SD_Q75': 905430} -> {'SD_Ensemble_Mean': 36181, 'SD_Ensemble_Std': 36181, 'SD_Q25': 36181, 'SD_Q50': 36181, 'SD_Q75': 36181}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 34, 'SD_Ensemble_Std': 34, 'SD_Q25': 34, 'SD_Q50': 34, 'SD_Q75': 34}
+[PrepareObsTile] sd_20170610.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905555, 'SD_Ensemble_Std': 905555, 'SD_Q25': 905555, 'SD_Q50': 905555, 'SD_Q75': 905555} -> {'SD_Ensemble_Mean': 36186, 'SD_Ensemble_Std': 36186, 'SD_Q25': 36186, 'SD_Q50': 36186, 'SD_Q75': 36186}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170611.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889565, 'SD_Ensemble_Std': 889565, 'SD_Q25': 889565, 'SD_Q50': 889565, 'SD_Q75': 889565} -> {'SD_Ensemble_Mean': 35546, 'SD_Ensemble_Std': 35546, 'SD_Q25': 35546, 'SD_Q50': 35546, 'SD_Q75': 35546}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170614.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 793780, 'SD_Ensemble_Std': 793780, 'SD_Q25': 793780, 'SD_Q50': 793780, 'SD_Q75': 793780} -> {'SD_Ensemble_Mean': 31715, 'SD_Ensemble_Std': 31715, 'SD_Q25': 31715, 'SD_Q50': 31715, 'SD_Q75': 31715}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170615.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170616.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170617.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889765, 'SD_Ensemble_Std': 889765, 'SD_Q25': 889765, 'SD_Q50': 889765, 'SD_Q75': 889765} -> {'SD_Ensemble_Mean': 35554, 'SD_Ensemble_Std': 35554, 'SD_Q25': 35554, 'SD_Q50': 35554, 'SD_Q75': 35554}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170620.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 788905, 'SD_Ensemble_Std': 788905, 'SD_Q25': 788905, 'SD_Q50': 788905, 'SD_Q75': 788905} -> {'SD_Ensemble_Mean': 31520, 'SD_Ensemble_Std': 31520, 'SD_Q25': 31520, 'SD_Q50': 31520, 'SD_Q75': 31520}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 36, 'SD_Ensemble_Std': 36, 'SD_Q25': 36, 'SD_Q50': 36, 'SD_Q75': 36}
+[PrepareObsTile] sd_20170621.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905430, 'SD_Ensemble_Std': 905430, 'SD_Q25': 905430, 'SD_Q50': 905430, 'SD_Q75': 905430} -> {'SD_Ensemble_Mean': 36181, 'SD_Ensemble_Std': 36181, 'SD_Q25': 36181, 'SD_Q50': 36181, 'SD_Q75': 36181}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 34, 'SD_Ensemble_Std': 34, 'SD_Q25': 34, 'SD_Q50': 34, 'SD_Q75': 34}
+[PrepareObsTile] sd_20170622.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905555, 'SD_Ensemble_Std': 905555, 'SD_Q25': 905555, 'SD_Q50': 905555, 'SD_Q75': 905555} -> {'SD_Ensemble_Mean': 36186, 'SD_Ensemble_Std': 36186, 'SD_Q25': 36186, 'SD_Q50': 36186, 'SD_Q75': 36186}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170623.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889440, 'SD_Ensemble_Std': 889440, 'SD_Q25': 889440, 'SD_Q50': 889440, 'SD_Q75': 889440} -> {'SD_Ensemble_Mean': 35541, 'SD_Ensemble_Std': 35541, 'SD_Q25': 35541, 'SD_Q50': 35541, 'SD_Q75': 35541}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170626.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 793730, 'SD_Ensemble_Std': 793730, 'SD_Q25': 793730, 'SD_Q50': 793730, 'SD_Q75': 793730} -> {'SD_Ensemble_Mean': 31713, 'SD_Ensemble_Std': 31713, 'SD_Q25': 31713, 'SD_Q50': 31713, 'SD_Q75': 31713}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170627.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170628.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 112, 'SD_Ensemble_Std': 112, 'SD_Q25': 112, 'SD_Q50': 112, 'SD_Q75': 112}
+[PrepareObsTile] sd_20170629.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889590, 'SD_Ensemble_Std': 889590, 'SD_Q25': 889590, 'SD_Q50': 889590, 'SD_Q75': 889590} -> {'SD_Ensemble_Mean': 35547, 'SD_Ensemble_Std': 35547, 'SD_Q25': 35547, 'SD_Q50': 35547, 'SD_Q75': 35547}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170702.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 789505, 'SD_Ensemble_Std': 789505, 'SD_Q25': 789505, 'SD_Q50': 789505, 'SD_Q75': 789505} -> {'SD_Ensemble_Mean': 31544, 'SD_Ensemble_Std': 31544, 'SD_Q25': 31544, 'SD_Q50': 31544, 'SD_Q75': 31544}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 36, 'SD_Ensemble_Std': 36, 'SD_Q25': 36, 'SD_Q50': 36, 'SD_Q75': 36}
+[PrepareObsTile] sd_20170703.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905430, 'SD_Ensemble_Std': 905430, 'SD_Q25': 905430, 'SD_Q50': 905430, 'SD_Q75': 905430} -> {'SD_Ensemble_Mean': 36181, 'SD_Ensemble_Std': 36181, 'SD_Q25': 36181, 'SD_Q50': 36181, 'SD_Q75': 36181}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 34, 'SD_Ensemble_Std': 34, 'SD_Q25': 34, 'SD_Q50': 34, 'SD_Q75': 34}
+[PrepareObsTile] sd_20170704.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905555, 'SD_Ensemble_Std': 905555, 'SD_Q25': 905555, 'SD_Q50': 905555, 'SD_Q75': 905555} -> {'SD_Ensemble_Mean': 36186, 'SD_Ensemble_Std': 36186, 'SD_Q25': 36186, 'SD_Q50': 36186, 'SD_Q75': 36186}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170705.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889415, 'SD_Ensemble_Std': 889415, 'SD_Q25': 889415, 'SD_Q50': 889415, 'SD_Q75': 889415} -> {'SD_Ensemble_Mean': 35540, 'SD_Ensemble_Std': 35540, 'SD_Q25': 35540, 'SD_Q50': 35540, 'SD_Q75': 35540}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170709.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170710.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 112, 'SD_Ensemble_Std': 112, 'SD_Q25': 112, 'SD_Q50': 112, 'SD_Q75': 112}
+[PrepareObsTile] sd_20170711.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889515, 'SD_Ensemble_Std': 889515, 'SD_Q25': 889515, 'SD_Q50': 889515, 'SD_Q75': 889515} -> {'SD_Ensemble_Mean': 35544, 'SD_Ensemble_Std': 35544, 'SD_Q25': 35544, 'SD_Q50': 35544, 'SD_Q75': 35544}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170714.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 789355, 'SD_Ensemble_Std': 789355, 'SD_Q25': 789355, 'SD_Q50': 789355, 'SD_Q75': 789355} -> {'SD_Ensemble_Mean': 31538, 'SD_Ensemble_Std': 31538, 'SD_Q25': 31538, 'SD_Q50': 31538, 'SD_Q75': 31538}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 36, 'SD_Ensemble_Std': 36, 'SD_Q25': 36, 'SD_Q50': 36, 'SD_Q75': 36}
+[PrepareObsTile] sd_20170715.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905430, 'SD_Ensemble_Std': 905430, 'SD_Q25': 905430, 'SD_Q50': 905430, 'SD_Q75': 905430} -> {'SD_Ensemble_Mean': 36181, 'SD_Ensemble_Std': 36181, 'SD_Q25': 36181, 'SD_Q50': 36181, 'SD_Q75': 36181}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 34, 'SD_Ensemble_Std': 34, 'SD_Q25': 34, 'SD_Q50': 34, 'SD_Q75': 34}
+[PrepareObsTile] sd_20170716.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905555, 'SD_Ensemble_Std': 905555, 'SD_Q25': 905555, 'SD_Q50': 905555, 'SD_Q75': 905555} -> {'SD_Ensemble_Mean': 36186, 'SD_Ensemble_Std': 36186, 'SD_Q25': 36186, 'SD_Q50': 36186, 'SD_Q75': 36186}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170717.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889790, 'SD_Ensemble_Std': 889790, 'SD_Q25': 889790, 'SD_Q50': 889790, 'SD_Q75': 889790} -> {'SD_Ensemble_Mean': 35555, 'SD_Ensemble_Std': 35555, 'SD_Q25': 35555, 'SD_Q50': 35555, 'SD_Q75': 35555}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170720.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 793730, 'SD_Ensemble_Std': 793730, 'SD_Q25': 793730, 'SD_Q50': 793730, 'SD_Q75': 793730} -> {'SD_Ensemble_Mean': 31713, 'SD_Ensemble_Std': 31713, 'SD_Q25': 31713, 'SD_Q50': 31713, 'SD_Q75': 31713}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170721.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170722.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170723.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889465, 'SD_Ensemble_Std': 889465, 'SD_Q25': 889465, 'SD_Q50': 889465, 'SD_Q75': 889465} -> {'SD_Ensemble_Mean': 35542, 'SD_Ensemble_Std': 35542, 'SD_Q25': 35542, 'SD_Q50': 35542, 'SD_Q75': 35542}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170726.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 789280, 'SD_Ensemble_Std': 789280, 'SD_Q25': 789280, 'SD_Q50': 789280, 'SD_Q75': 789280} -> {'SD_Ensemble_Mean': 31535, 'SD_Ensemble_Std': 31535, 'SD_Q25': 31535, 'SD_Q50': 31535, 'SD_Q75': 31535}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 36, 'SD_Ensemble_Std': 36, 'SD_Q25': 36, 'SD_Q50': 36, 'SD_Q75': 36}
+[PrepareObsTile] sd_20170727.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905430, 'SD_Ensemble_Std': 905430, 'SD_Q25': 905430, 'SD_Q50': 905430, 'SD_Q75': 905430} -> {'SD_Ensemble_Mean': 36181, 'SD_Ensemble_Std': 36181, 'SD_Q25': 36181, 'SD_Q50': 36181, 'SD_Q75': 36181}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 34, 'SD_Ensemble_Std': 34, 'SD_Q25': 34, 'SD_Q50': 34, 'SD_Q75': 34}
+[PrepareObsTile] sd_20170728.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905555, 'SD_Ensemble_Std': 905555, 'SD_Q25': 905555, 'SD_Q50': 905555, 'SD_Q75': 905555} -> {'SD_Ensemble_Mean': 36186, 'SD_Ensemble_Std': 36186, 'SD_Q25': 36186, 'SD_Q50': 36186, 'SD_Q75': 36186}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170729.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889640, 'SD_Ensemble_Std': 889640, 'SD_Q25': 889640, 'SD_Q50': 889640, 'SD_Q75': 889640} -> {'SD_Ensemble_Mean': 35549, 'SD_Ensemble_Std': 35549, 'SD_Q25': 35549, 'SD_Q50': 35549, 'SD_Q75': 35549}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170801.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 793980, 'SD_Ensemble_Std': 793980, 'SD_Q25': 793980, 'SD_Q50': 793980, 'SD_Q75': 793980} -> {'SD_Ensemble_Mean': 31723, 'SD_Ensemble_Std': 31723, 'SD_Q25': 31723, 'SD_Q50': 31723, 'SD_Q75': 31723}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170802.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170803.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 112, 'SD_Ensemble_Std': 112, 'SD_Q25': 112, 'SD_Q50': 112, 'SD_Q75': 112}
+[PrepareObsTile] sd_20170804.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889490, 'SD_Ensemble_Std': 889490, 'SD_Q25': 889490, 'SD_Q50': 889490, 'SD_Q75': 889490} -> {'SD_Ensemble_Mean': 35543, 'SD_Ensemble_Std': 35543, 'SD_Q25': 35543, 'SD_Q50': 35543, 'SD_Q75': 35543}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170807.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 788530, 'SD_Ensemble_Std': 788530, 'SD_Q25': 788530, 'SD_Q50': 788530, 'SD_Q75': 788530} -> {'SD_Ensemble_Mean': 31505, 'SD_Ensemble_Std': 31505, 'SD_Q25': 31505, 'SD_Q50': 31505, 'SD_Q75': 31505}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 36, 'SD_Ensemble_Std': 36, 'SD_Q25': 36, 'SD_Q50': 36, 'SD_Q75': 36}
+[PrepareObsTile] sd_20170808.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905430, 'SD_Ensemble_Std': 905430, 'SD_Q25': 905430, 'SD_Q50': 905430, 'SD_Q75': 905430} -> {'SD_Ensemble_Mean': 36181, 'SD_Ensemble_Std': 36181, 'SD_Q25': 36181, 'SD_Q50': 36181, 'SD_Q75': 36181}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 34, 'SD_Ensemble_Std': 34, 'SD_Q25': 34, 'SD_Q50': 34, 'SD_Q75': 34}
+[PrepareObsTile] sd_20170809.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905555, 'SD_Ensemble_Std': 905555, 'SD_Q25': 905555, 'SD_Q50': 905555, 'SD_Q75': 905555} -> {'SD_Ensemble_Mean': 36186, 'SD_Ensemble_Std': 36186, 'SD_Q25': 36186, 'SD_Q50': 36186, 'SD_Q75': 36186}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170810.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889565, 'SD_Ensemble_Std': 889565, 'SD_Q25': 889565, 'SD_Q50': 889565, 'SD_Q75': 889565} -> {'SD_Ensemble_Mean': 35546, 'SD_Ensemble_Std': 35546, 'SD_Q25': 35546, 'SD_Q50': 35546, 'SD_Q75': 35546}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170813.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 794280, 'SD_Ensemble_Std': 794280, 'SD_Q25': 794280, 'SD_Q50': 794280, 'SD_Q75': 794280} -> {'SD_Ensemble_Mean': 31735, 'SD_Ensemble_Std': 31735, 'SD_Q25': 31735, 'SD_Q50': 31735, 'SD_Q75': 31735}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170814.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170815.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 112, 'SD_Ensemble_Std': 112, 'SD_Q25': 112, 'SD_Q50': 112, 'SD_Q75': 112}
+[PrepareObsTile] sd_20170816.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889615, 'SD_Ensemble_Std': 889615, 'SD_Q25': 889615, 'SD_Q50': 889615, 'SD_Q75': 889615} -> {'SD_Ensemble_Mean': 35548, 'SD_Ensemble_Std': 35548, 'SD_Q25': 35548, 'SD_Q50': 35548, 'SD_Q75': 35548}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170819.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 789130, 'SD_Ensemble_Std': 789130, 'SD_Q25': 789130, 'SD_Q50': 789130, 'SD_Q75': 789130} -> {'SD_Ensemble_Mean': 31529, 'SD_Ensemble_Std': 31529, 'SD_Q25': 31529, 'SD_Q50': 31529, 'SD_Q75': 31529}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 36, 'SD_Ensemble_Std': 36, 'SD_Q25': 36, 'SD_Q50': 36, 'SD_Q75': 36}
+[PrepareObsTile] sd_20170820.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905430, 'SD_Ensemble_Std': 905430, 'SD_Q25': 905430, 'SD_Q50': 905430, 'SD_Q75': 905430} -> {'SD_Ensemble_Mean': 36181, 'SD_Ensemble_Std': 36181, 'SD_Q25': 36181, 'SD_Q50': 36181, 'SD_Q75': 36181}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 34, 'SD_Ensemble_Std': 34, 'SD_Q25': 34, 'SD_Q50': 34, 'SD_Q75': 34}
+[PrepareObsTile] sd_20170821.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905555, 'SD_Ensemble_Std': 905555, 'SD_Q25': 905555, 'SD_Q50': 905555, 'SD_Q75': 905555} -> {'SD_Ensemble_Mean': 36186, 'SD_Ensemble_Std': 36186, 'SD_Q25': 36186, 'SD_Q50': 36186, 'SD_Q75': 36186}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 111, 'SD_Ensemble_Std': 111, 'SD_Q25': 111, 'SD_Q50': 111, 'SD_Q75': 111}
+[PrepareObsTile] sd_20170822.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889490, 'SD_Ensemble_Std': 889490, 'SD_Q25': 889490, 'SD_Q50': 889490, 'SD_Q75': 889490} -> {'SD_Ensemble_Mean': 35543, 'SD_Ensemble_Std': 35543, 'SD_Q25': 35543, 'SD_Q50': 35543, 'SD_Q75': 35543}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170825.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 793655, 'SD_Ensemble_Std': 793655, 'SD_Q25': 793655, 'SD_Q50': 793655, 'SD_Q75': 793655} -> {'SD_Ensemble_Mean': 31710, 'SD_Ensemble_Std': 31710, 'SD_Q25': 31710, 'SD_Q50': 31710, 'SD_Q75': 31710}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170826.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 29, 'SD_Ensemble_Std': 29, 'SD_Q25': 29, 'SD_Q50': 29, 'SD_Q75': 29}
+[PrepareObsTile] sd_20170827.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 905630, 'SD_Ensemble_Std': 905630, 'SD_Q25': 905630, 'SD_Q50': 905630, 'SD_Q75': 905630} -> {'SD_Ensemble_Mean': 36189, 'SD_Ensemble_Std': 36189, 'SD_Q25': 36189, 'SD_Q50': 36189, 'SD_Q75': 36189}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 112, 'SD_Ensemble_Std': 112, 'SD_Q25': 112, 'SD_Q50': 112, 'SD_Q75': 112}
+[PrepareObsTile] sd_20170828.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 889590, 'SD_Ensemble_Std': 889590, 'SD_Q25': 889590, 'SD_Q50': 889590, 'SD_Q75': 889590} -> {'SD_Ensemble_Mean': 35547, 'SD_Ensemble_Std': 35547, 'SD_Q25': 35547, 'SD_Q50': 35547, 'SD_Q75': 35547}
+[regrid_obs_to_dem] NaN cells on regridded grid's outermost row/column: {'SD_Ensemble_Mean': 248, 'SD_Ensemble_Std': 248, 'SD_Q25': 248, 'SD_Q50': 248, 'SD_Q75': 248}
+[PrepareObsTile] sd_20170831.nc: valid cells before/after regrid: {'SD_Ensemble_Mean': 789780, 'SD_Ensemble_Std': 789780, 'SD_Q25': 789780, 'SD_Q50': 789780, 'SD_Q75': 789780} -> {'SD_Ensemble_Mean': 31555, 'SD_Ensemble_Std': 31555, 'SD_Q25': 31555, 'SD_Q50': 31555, 'SD_Q75': 31555}
+[PrepareObsTile] window 2016-09-01-2016-09-07 (2 retrieval(s), correlated): floor active on 98.8% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20160904.nc
+[PrepareObsTile] window 2016-09-08-2016-09-14 (3 retrieval(s), correlated): floor active on 99.3% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20160911.nc
+[PrepareObsTile] window 2016-09-15-2016-09-21 (2 retrieval(s), correlated): floor active on 98.9% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20160918.nc
+[PrepareObsTile] window 2016-09-22-2016-09-28 (3 retrieval(s), correlated): floor active on 99.4% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20160925.nc
+[PrepareObsTile] window 2016-09-29-2016-10-05 (4 retrieval(s), correlated): floor active on 98.5% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20161002.nc
+[PrepareObsTile] window 2016-10-06-2016-10-12 (3 retrieval(s), correlated): floor active on 95.3% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20161009.nc
+[PrepareObsTile] window 2016-10-13-2016-10-19 (3 retrieval(s), correlated): floor active on 90.0% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20161016.nc
+[PrepareObsTile] window 2016-10-20-2016-10-26 (2 retrieval(s), correlated): floor active on 82.2% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20161023.nc
+[PrepareObsTile] window 2016-10-27-2016-11-02 (2 retrieval(s), correlated): floor active on 93.9% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20161030.nc
+[PrepareObsTile] window 2016-11-03-2016-11-09 (2 retrieval(s), correlated): floor active on 64.4% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20161106.nc
+[PrepareObsTile] window 2016-11-10-2016-11-16 (3 retrieval(s), correlated): floor active on 24.2% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20161113.nc
+[PrepareObsTile] window 2016-11-17-2016-11-23 (1 retrieval(s), correlated): floor active on 26.9% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20161120.nc
+[PrepareObsTile] window 2016-11-24-2016-11-30 (2 retrieval(s), correlated): floor active on 47.2% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20161127.nc
+[PrepareObsTile] window 2016-12-01-2016-12-07 (3 retrieval(s), correlated): floor active on 42.6% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20161204.nc
+[PrepareObsTile] window 2016-12-08-2016-12-14 (2 retrieval(s), correlated): floor active on 40.6% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20161211.nc
+[PrepareObsTile] window 2016-12-15-2016-12-21 (2 retrieval(s), correlated): floor active on 42.5% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20161218.nc
+[PrepareObsTile] window 2016-12-22-2016-12-28 (2 retrieval(s), correlated): floor active on 37.7% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20161225.nc
+[PrepareObsTile] window 2016-12-29-2017-01-04 (3 retrieval(s), correlated): floor active on 28.5% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170101.nc
+[PrepareObsTile] window 2017-01-05-2017-01-11 (3 retrieval(s), correlated): floor active on 1.4% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170108.nc
+[PrepareObsTile] window 2017-01-12-2017-01-18 (2 retrieval(s), correlated): floor active on 1.6% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170115.nc
+[PrepareObsTile] window 2017-01-19-2017-01-25 (1 retrieval(s), correlated): floor active on 1.1% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170122.nc
+[PrepareObsTile] window 2017-01-26-2017-02-01 (2 retrieval(s), correlated): floor active on 1.2% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170129.nc
+[PrepareObsTile] window 2017-02-02-2017-02-08 (3 retrieval(s), correlated): floor active on 2.5% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170205.nc
+[PrepareObsTile] window 2017-02-09-2017-02-15 (2 retrieval(s), correlated): floor active on 10.0% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170212.nc
+[PrepareObsTile] window 2017-02-16-2017-02-22 (2 retrieval(s), correlated): floor active on 12.2% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170219.nc
+[PrepareObsTile] window 2017-02-23-2017-03-01 (3 retrieval(s), correlated): floor active on 16.3% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170226.nc
+[PrepareObsTile] window 2017-03-02-2017-03-08 (3 retrieval(s), correlated): floor active on 19.2% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170305.nc
+[PrepareObsTile] window 2017-03-09-2017-03-15 (4 retrieval(s), correlated): floor active on 22.1% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170312.nc
+[PrepareObsTile] window 2017-03-16-2017-03-22 (4 retrieval(s), correlated): floor active on 29.5% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170319.nc
+[PrepareObsTile] window 2017-03-23-2017-03-29 (5 retrieval(s), correlated): floor active on 31.7% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170326.nc
+[PrepareObsTile] window 2017-03-30-2017-04-05 (5 retrieval(s), correlated): floor active on 36.9% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170402.nc
+[PrepareObsTile] window 2017-04-06-2017-04-12 (5 retrieval(s), correlated): floor active on 42.3% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170409.nc
+[PrepareObsTile] window 2017-04-13-2017-04-19 (4 retrieval(s), correlated): floor active on 47.4% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170416.nc
+[PrepareObsTile] window 2017-04-20-2017-04-26 (4 retrieval(s), correlated): floor active on 25.9% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170423.nc
+[PrepareObsTile] window 2017-04-27-2017-05-03 (5 retrieval(s), correlated): floor active on 28.3% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170430.nc
+[PrepareObsTile] window 2017-05-04-2017-05-10 (5 retrieval(s), correlated): floor active on 36.2% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170507.nc
+[PrepareObsTile] window 2017-05-11-2017-05-17 (5 retrieval(s), correlated): floor active on 51.7% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170514.nc
+[PrepareObsTile] window 2017-05-18-2017-05-24 (5 retrieval(s), correlated): floor active on 60.8% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170521.nc
+[PrepareObsTile] window 2017-05-25-2017-05-31 (4 retrieval(s), correlated): floor active on 71.0% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170528.nc
+[PrepareObsTile] window 2017-06-01-2017-06-07 (4 retrieval(s), correlated): floor active on 73.5% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170604.nc
+[PrepareObsTile] window 2017-06-08-2017-06-14 (5 retrieval(s), correlated): floor active on 79.1% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170611.nc
+[PrepareObsTile] window 2017-06-15-2017-06-21 (5 retrieval(s), correlated): floor active on 87.4% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170618.nc
+[PrepareObsTile] window 2017-06-22-2017-06-28 (5 retrieval(s), correlated): floor active on 93.6% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170625.nc
+[PrepareObsTile] window 2017-06-29-2017-07-05 (5 retrieval(s), correlated): floor active on 91.2% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170702.nc
+[PrepareObsTile] window 2017-07-06-2017-07-12 (3 retrieval(s), correlated): floor active on 94.5% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170709.nc
+[PrepareObsTile] window 2017-07-13-2017-07-19 (4 retrieval(s), correlated): floor active on 93.8% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170716.nc
+[PrepareObsTile] window 2017-07-20-2017-07-26 (5 retrieval(s), correlated): floor active on 94.1% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170723.nc
+[PrepareObsTile] window 2017-07-27-2017-08-02 (5 retrieval(s), correlated): floor active on 93.5% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170730.nc
+[PrepareObsTile] window 2017-08-03-2017-08-09 (5 retrieval(s), correlated): floor active on 99.7% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170806.nc
+[PrepareObsTile] window 2017-08-10-2017-08-16 (5 retrieval(s), correlated): floor active on 99.5% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170813.nc
+[PrepareObsTile] window 2017-08-17-2017-08-23 (4 retrieval(s), correlated): floor active on 99.1% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170820.nc
+[PrepareObsTile] window 2017-08-24-2017-08-30 (4 retrieval(s), correlated): floor active on 99.2% of valid cells
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/Obs/sd_20170827.nc
+[PrepareObsTile] window 2017-08-31-2017-09-06 dropped: its midpoint 2017-09-03 00:00:00 falls outside [2016-09-01 00:00, 2017-08-31 23:00].
+Observation files prepared: 52 dates.
+Found forcing zarr files in /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/FORCINGS. Checking for the specified date range: 2016-09-01 00:00 to 2017-08-31 23:00
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/mask_msites_tile.nc
+Preprocessing complete!
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v6/y035x200/RESULTS_EnKF_20160901_20170831/resultsSitesOnly.nc

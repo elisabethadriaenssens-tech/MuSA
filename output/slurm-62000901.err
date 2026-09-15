@@ -1,0 +1,17 @@
+Lmod has detected the following error: These module(s) or extension(s) exist
+but cannot be loaded as requested: "GCC"
+   Try: "module spider GCC" to see how to load the module(s).
+
+
+
+Lmod has detected the following error: These module(s) or extension(s) exist
+but cannot be loaded as requested: "Miniconda3"
+   Try: "module spider Miniconda3" to see how to load the module(s).
+
+
+
+Found forcing zarr files in /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v0/y035x200/FORCINGS. Checking for the specified date range: 2016-09-01 00:00 to 2017-08-31 23:00
+Found forcing zarr files in /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v0/y035x200/FORCINGS. Checking for the specified date range: 2016-09-01 00:00 to 2017-08-31 23:00
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v0/y035x200/mask_msites_tile.nc
+Preprocessing complete!
+Saved the file to: /staging/leuven/stg_00024/MSC_TMP/Snowshop/MuSAruns_Elisabeth/v0/y035x200/RESULTS_OL_20160901_20170831/resultsSitesOnly.nc

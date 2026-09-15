@@ -43,6 +43,9 @@ def regrid_obs_to_dem(
     Returns the regridded dataset, plus a dict of valid (non-NaN) cell counts per data
     variable before and after regridding, so the caller can log any data loss.
     '''
+    dem_lat_original=dem["lat"].values.copy()
+    dem_lon_original=dem["lon"].values.copy()
+
     obs=obs.sortby("lat").sortby("lon")
     dem=dem.sortby("lat").sortby("lon")
 
@@ -50,6 +53,11 @@ def regrid_obs_to_dem(
 
     obs_regridded=obs.interp(lat=dem["lat"], lon=dem["lon"], method="linear")
     obs_regridded=obs_regridded.assign_coords(lat=dem["lat"], lon=dem["lon"])
+
+    # obs_array() in internal_fns.py indexes observations positionally with the same
+    # lat_idx used for the forcings/DEM/mask, which are all descending. Restore the
+    # DEM's original axis order here or every cell reads its N-S mirrored counterpart.
+    obs_regridded=obs_regridded.reindex(lat=dem_lat_original, lon=dem_lon_original)
 
     valid_after={var: int(obs_regridded[var].notnull().sum()) for var in obs_regridded.data_vars}
 
@@ -189,6 +197,8 @@ def PrepareObsTile(
         cqr_adjustment:float=None,
         divisor:float=2.0,
         obs_error_aggregation:str="correlated",
+        obs_date_ini:str=None,
+        obs_date_end:str=None,
     ) -> list:
     '''
     Function that prepares observation/prediction files for a specific tile (tx, ty) and
@@ -199,7 +209,18 @@ def PrepareObsTile(
     consecutive 7-day windows starting at date_ini. A window is also dropped (with a
     message explaining why) if its midpoint falls outside [date_ini, date_end] -- the
     midpoint is never clamped into range, since that would assimilate the observation on
-    the wrong date. One output file is written per remaining non-empty window (windows
+    the wrong date.
+
+    obs_date_ini / obs_date_end optionally narrow the range a window's midpoint must fall
+    in to be assimilated, independently of [date_ini, date_end] (which still controls the
+    model run period and which retrieval files are read at all). This is how a full-year
+    run can assimilate only part of the year: the model still runs the whole period, but
+    windows whose midpoint falls outside [obs_date_ini, obs_date_end] are dropped the same
+    way windows outside the run period are. Either bound may be given alone; a bound left
+    as None (the default) behaves exactly as if obs_date_ini/obs_date_end were absent from
+    the config, i.e. it imposes no additional restriction beyond [date_ini, date_end].
+
+    One output file is written per remaining non-empty window (windows
     with no retrievals are skipped, never written empty):
         - obs_var_names[0] is averaged across the retrievals present in the window
           (skipping NaNs), and timestamped at the window's midpoint (e.g. a 1-7 Sep
@@ -231,6 +252,11 @@ def PrepareObsTile(
     date_pattern=re.compile(r"\d{8}")
     date_ini_ts=pd.Timestamp(date_ini).normalize()
     date_end_ts=pd.Timestamp(date_end)
+
+    #optional narrower assimilation range: a bound left as None imposes no restriction
+    #beyond [date_ini_ts, date_end_ts], so behaviour is unchanged when both are absent
+    obs_date_ini_ts=pd.Timestamp(obs_date_ini).normalize() if obs_date_ini is not None else None
+    obs_date_end_ts=pd.Timestamp(obs_date_end) if obs_date_end is not None else None
 
     tile_dir=os.path.join(obs_source, f"y{ty:03d}x{tx:03d}")
     files=glob.glob(os.path.join(tile_dir, "sd_*.nc"))
@@ -305,6 +331,7 @@ def PrepareObsTile(
 
     #---average each window and write one file per non-empty window, in chronological order---
     dates_written=[]
+    n_skipped_obs_range=0
     for window_idx in sorted(windows):
         entries=windows[window_idx]
         n_retrievals=len(entries)
@@ -317,6 +344,19 @@ def PrepareObsTile(
                 f"[PrepareObsTile] window {window_start.date()}-"
                 f"{(window_start + pd.Timedelta(days=6)).date()} dropped: its midpoint "
                 f"{midpoint} falls outside [{date_ini}, {date_end}].",
+                file=sys.stderr,
+            )
+            continue
+
+        if (obs_date_ini_ts is not None and midpoint < obs_date_ini_ts) or (
+            obs_date_end_ts is not None and midpoint > obs_date_end_ts
+        ):
+            n_skipped_obs_range+=1
+            print(
+                f"[PrepareObsTile] window {window_start.date()}-"
+                f"{(window_start + pd.Timedelta(days=6)).date()} dropped: its midpoint "
+                f"{midpoint} falls outside the obs assimilation range "
+                f"[{obs_date_ini}, {obs_date_end}].",
                 file=sys.stderr,
             )
             continue
@@ -350,5 +390,12 @@ def PrepareObsTile(
         saveXrtoNetCDF(ds=ds_week, savedir=obs_dir, filename=filename)
 
         dates_written.append(midpoint.strftime("%Y-%m-%d %H:%M"))
+
+    if obs_date_ini_ts is not None or obs_date_end_ts is not None:
+        print(
+            f"[PrepareObsTile] {n_skipped_obs_range} window(s) skipped for falling "
+            f"outside the obs assimilation range [{obs_date_ini}, {obs_date_end}].",
+            file=sys.stderr,
+        )
 
     return dates_written

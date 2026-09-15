@@ -69,6 +69,8 @@ EXPERIMENT_CONFIG_KEYS = {
     "sigma_divisor": "divisor",
     "cqr_adjustment": "cqr_adjustment",
     "obs_error_aggregation": "obs_error_aggregation",
+    "obs_date_ini": "obs_date_ini",
+    "obs_date_end": "obs_date_end",
 }
 # NOTE: "dates_obs" is deliberately absent here -- it is derived at runtime by
 # PrepareRunTile.runPreprocessing() from the observation files PrepareObsTile actually
@@ -177,6 +179,11 @@ class PrepareRunTile:
         obs_error_aggregation: str, one of "correlated" (default; sigma_week = mean(sigma_i),
             no error reduction from averaging retrievals within a weekly window) or
             "independent" (sigma_week = sqrt(sum(sigma_i**2)) / n). See PrepareObsTile.
+        obs_date_ini / obs_date_end: str | None, optional narrower range within
+            [date_ini, date_end] that a window's midpoint must fall in to be assimilated.
+            The model still runs the full [date_ini, date_end] period; this only controls
+            which weekly windows PrepareObsTile writes observation files for. None (the
+            default) imposes no additional restriction. Unused when uq_method=="none".
 
     Returns:
         str, path to the adjusted config file
@@ -208,6 +215,8 @@ class PrepareRunTile:
                  cqr_adjustment,
                  divisor:float,
                  obs_error_aggregation:str="correlated",
+                 obs_date_ini:str=None,
+                 obs_date_end:str=None,
                  ):
         self.tx=tx
         self.ty=ty
@@ -235,6 +244,8 @@ class PrepareRunTile:
         self.cqr_adjustment=cqr_adjustment
         self.divisor=divisor
         self.obs_error_aggregation=obs_error_aggregation
+        self.obs_date_ini=obs_date_ini
+        self.obs_date_end=obs_date_end
 
     def runPreprocessing(self) -> str:
         ''' 
@@ -293,6 +304,8 @@ class PrepareRunTile:
                 cqr_adjustment=self.cqr_adjustment,
                 divisor=self.divisor,
                 obs_error_aggregation=self.obs_error_aggregation,
+                obs_date_ini=self.obs_date_ini,
+                obs_date_end=self.obs_date_end,
                 )
             print(f"Observation files prepared: {len(dates_obs)} dates.", file=sys.stderr)
 

@@ -24,6 +24,8 @@ obs_sd_floor: 0.05
 sigma_divisor: 2.0
 cqr_adjustment: null           # required only when uq_method: CQR
 obs_error_aggregation: correlated  # "correlated" (default, no sqrt(n) reduction) or "independent"
+obs_date_ini: null             # optional: narrows assimilation to part of [date_ini, date_end]
+obs_date_end: null             # (model still runs the full period); null assimilates it all
 lat_obs_var_name: lat
 lon_obs_var_name: lon
 obs_error_var_names: [sdError] # variable name for the dynamic (per-cell) obs error variance
