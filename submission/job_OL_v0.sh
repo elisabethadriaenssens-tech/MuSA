@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=OL_v0_ensemble
-#SBATCH --output=slurm-%j.out
-#SBATCH --error=slurm-%j.err
+#SBATCH --output=logs/%x-%j.out
+#SBATCH --error=logs/%x-%j.err
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=18

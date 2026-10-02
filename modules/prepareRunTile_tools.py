@@ -265,6 +265,7 @@ def adjust_config_file(
         date_ini:str="2018-09-01 00:00",
         date_end:str="2020-08-30 23:00",
         implementation:str="open_loop",
+        parallelization:str="multiprocessing",
         nprocess:int=len(os.sched_getaffinity(0)),
         nprocess_min:int=8,
         model_only_sites:bool=False,
@@ -334,6 +335,9 @@ def adjust_config_file(
                     da_algorithm=da_algorithm,
                     date_ini=date_ini,
                     date_end=date_end)
+
+    #---adjust the parallelization scheme (in HPC.array, nprocess is read from sys.argv[2] instead)---
+    cfg.parallelization=parallelization
 
     #---adjust the number of processes in the config file---
     cfg.nprocess=max(nprocess,nprocess_min)

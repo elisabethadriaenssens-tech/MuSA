@@ -1,0 +1,12 @@
+version: 11
+description: PBS + QR, model Sep-Aug, assimilation Nov-Apr only
+
+uq_method: QR
+r_cov: dynamic_error
+obs_source: /staging/leuven/stg_00024/MSC_TMP/Snowshop/PREDICTIONS_Elisabeth
+obs_var_names: ["SD_Q50"]
+date_ini: "2016-09-01 00:00"
+date_end: "2017-08-31 23:00"
+obs_date_ini: "2016-11-01 00:00"
+obs_date_end: "2017-04-30 23:00"
+da_algorithm: PBS

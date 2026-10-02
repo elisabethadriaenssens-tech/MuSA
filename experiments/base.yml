@@ -5,6 +5,7 @@ date_end: "2017-08-31 23:00"
 
 da_algorithm: EnKF
 implementation: distributed
+parallelization: multiprocessing  # "HPC.array" for SLURM job arrays (nprocess then comes from sys.argv[2])
 ensemble_members: 100
 
 # --- paths ---

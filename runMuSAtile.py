@@ -383,7 +383,8 @@ def transform_results():
     args=getArgsFromCfg()
 
     if args.nc_maks_path is None:
-        transformMuSA.saveFinalOutputToZarr(args, removeCells=args.remove_output_cells)
+        transformMuSA.saveFinalOutputToZarr(args, removeCells=args.remove_output_cells,
+                                            da_output=cfg.da_algorithm != "deterministic_OL")
     else:
         transformMuSA.saveFinalOutputSitesOnly(args, dsMeas=args.store_measurements, removeCells=args.remove_output_cells)
 
@@ -397,5 +398,9 @@ if __name__ == "__main__":
     ifn.pre_cheks()
 
     MuSA()
-    
-    transform_results()
+
+    # In HPC.array mode each task only simulates its own share of the cells, and
+    # transform_results() globs every cell file in output_path, so it must run once
+    # after the whole array has finished: see postprocessMuSArunTile.py
+    if cfg.parallelization != "HPC.array":
+        transform_results()

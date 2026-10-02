@@ -57,12 +57,51 @@ def _ReturnSpecificsForcingArray(args:dict) -> tuple[tuple, dict, dict]:
     return shape_array, dims_array, coords_array
 
 
+# DA tables written to the spatial zarr, per variable as {var}_{key}: the posterior
+# mean/spread, the prior mean (for PBS the free-running ensemble) and the deterministic
+# open loop, so DA and OL maps can be differenced from the same file
+DA_KEYS_TO_SAVE = ["mean_Post", "std_Post", "mean_Prior", "OL_Sim"]
+
+
+def _table_to_daily(table, value_cols, index_datetime, date_col="Date"):
+    '''
+    Return `table` collapsed to one row per day, indexed by `date`.
+
+    Tables at forcing resolution (row count == len(index_datetime), e.g.
+    DA_Results, OL_Sim, open-loop cells, or the Prior/Post stats when
+    write_stat_daily=False) get the same daily-mean treatment as the open-loop
+    path; they are indexed positionally, so open-loop cells (which have no Date
+    column) work too. Tables already at daily resolution (Prior/Post stats when
+    write_stat_daily=True) just have their own Date column parsed.
+    '''
+    if len(table) == len(index_datetime):
+        table = table[value_cols].copy()
+        table.index = index_datetime
+        table = (
+            table.reset_index()
+            .groupby("date", as_index=False)[value_cols]
+            .mean()
+        )
+    else:
+        table = table[[date_col] + value_cols].copy()
+        if pd.api.types.is_datetime64_any_dtype(table[date_col]):
+            table[date_col] = pd.to_datetime(table[date_col])
+        else:
+            table[date_col] = pd.to_datetime(
+                table[date_col], format="%d/%m/%Y-%H:%M"
+            )
+        table = table.rename(columns={date_col: "date"})
+    return table.set_index("date")
+
+
 def create_template_zarr(
         args:dict,
         vars_to_save:list[str]=["snd", "SWE", "fSCA"],
+        cell_vars:list[str]=[],
         ) -> str:
     ''' 
     Function to create a template zarr file. Note that the mean per day is taken for the vars to save.
+    cell_vars are per-cell variables without a date dimension (e.g. the da_cell flag).
     '''
     # get the shape of the array and the dimensions and coordinates for the forcing data
     shape_array, dims_forcings, coords_forcings=_ReturnSpecificsForcingArray(args)
@@ -89,6 +128,16 @@ def create_template_zarr(
                 name=var,
             )
         )
+    dims_cell = {k: v for k, v in dims_forcings.items() if k in ["lat", "lon"]}
+    for var in cell_vars:
+        ds_template.append(
+            xr.DataArray(
+                da.empty(shape=tuple(dims_cell.values()), chunks=1, dtype=np.float32),
+                dims=dims_cell,
+                coords={k: coords_forcings[k] for k in dims_cell},
+                name=var,
+            )
+        )
     ds_template=xr.merge(ds_template)
 
     #--save the template to zarr---
@@ -103,6 +152,7 @@ def WriteCellsToZarr(
         store_to_write: str,
         args: dict,
         vars_to_save:list[str]=["snd", "SWE", "fSCA"],
+        da_output:bool=False,
     ) -> None:
 
     #extract lat and lon indices from the filename
@@ -124,20 +174,41 @@ def WriteCellsToZarr(
         lat_idx = ds_forcings["lat"].isel(lat=idx_lat).item()
         lon_idx = ds_forcings["lon"].isel(lon=idx_lon).item()
 
-    # open the file -> using io_read and set index
+    # open the file -> using io_read
     cell=ifn.io_read(file)
-    cell=cell.set_index(index_datetime)
 
-    # take the mean of the outputs per day
-    cell=cell.groupby(cell.index.get_level_values("date"))[vars_to_save].mean()
+    if da_output:
+        # DA output: dict of DA_Results, OL_Sim, mean/std_Prior, mean/std_Post. Cells
+        # without any observation were run as open loop (single DataFrame at forcing
+        # resolution): only their OL_Sim is written, the ensemble variables stay NaN
+        is_da_cell=isinstance(cell, dict)
+        tables={key: cell[key] for key in DA_KEYS_TO_SAVE} if is_da_cell else {"OL_Sim": cell}
 
+        daily=[]
+        for key, table in tables.items():
+            table_daily=_table_to_daily(table, vars_to_save, index_datetime)
+            daily.append(table_daily.rename(columns={v: f"{v}_{key}" for v in vars_to_save}))
+        cell=pd.concat(daily, axis=1)
+        cell=cell.reindex(columns=[f"{v}_{key}" for key in DA_KEYS_TO_SAVE for v in vars_to_save])
+    else:
+        # open-loop output: a single DataFrame at forcing resolution
+        cell=_table_to_daily(cell, vars_to_save, index_datetime)
+
+    # the rows are written positionally into the template's date axis, so they must match it
+    dates=index_datetime.get_level_values("date").unique()
+    if not pd.DatetimeIndex(cell.index).equals(pd.DatetimeIndex(dates)):
+        raise ValueError(f"Daily dates of {file} do not match the forcing dates.")
+    cell.index.name="date"
 
     # generate an xr dataset from the vars to save
-    cell_ds=cell[vars_to_save].to_xarray()
+    cell_ds=cell.to_xarray()
 
     #add lat, lon info
     cell_ds = cell_ds.expand_dims({"lat": [lat_idx], 
                                 "lon": [lon_idx]})
+    if da_output:
+        cell_ds["da_cell"]=xr.DataArray(np.full((1, 1), float(is_da_cell), dtype=np.float32),
+                                        dims=["lat", "lon"])
 
     #save to the zarr
     cell_ds.drop_vars(["date"]).to_zarr(
@@ -148,17 +219,32 @@ def WriteCellsToZarr(
 
 def saveFinalOutputToZarr(
         args:dict,
-        vars_to_save:list[str]=["snd", "SWE", "fSCA"],
-        removeCells:bool=True
+        vars_to_save:list[str]=None,
+        removeCells:bool=True,
+        da_output:bool=False
     ) -> None:
     ''' 
     Function to save the finall output to a zarr store.
-    
+
+    For open-loop runs the daily mean of vars_to_save (default snd, SWE, fSCA) is saved.
+    For DA runs (da_output=True) every var in vars_to_save (default snd, SWE) is saved as
+    {var}_{key} for each key in DA_KEYS_TO_SAVE, plus a per-cell da_cell flag: 1 where
+    the cell was assimilated, 0 where it had no observations and only the open loop ran
+    (its ensemble variables are then NaN).
     '''
+    if vars_to_save is None:
+        vars_to_save=["snd", "SWE"] if da_output else ["snd", "SWE", "fSCA"]
+
     #creat the template zarr file
-    out_path=create_template_zarr(args, 
-                                  vars_to_save=vars_to_save
-                                  )
+    if da_output:
+        out_path=create_template_zarr(args,
+                                      vars_to_save=[f"{v}_{key}" for key in DA_KEYS_TO_SAVE for v in vars_to_save],
+                                      cell_vars=["da_cell"]
+                                      )
+    else:
+        out_path=create_template_zarr(args, 
+                                      vars_to_save=vars_to_save
+                                      )
 
     #write the cells to the zarr file
     cells=glob.glob(os.path.join(args.output_path, "*.pkl*"))
@@ -170,7 +256,8 @@ def saveFinalOutputToZarr(
             file=cell,
             store_to_write=out_path,
             args=args,
-            vars_to_save=vars_to_save
+            vars_to_save=vars_to_save,
+            da_output=da_output
         )
         for cell in cells
         )
@@ -232,34 +319,6 @@ def _process_cells_onlysites(
     dsMeasTile=dsMeas.where(index, drop=True)
     sites=dsMeasTile["site"].values
 
-    def _table_to_daily(table, value_cols, date_col="Date"):
-        '''
-        Return `table` collapsed to one row per day, indexed by `date`.
-
-        Tables at forcing resolution (row count == len(index_datetime), e.g.
-        DA_Results, or the Prior/Post stats when write_stat_daily=False) get
-        the same daily-mean treatment as the open-loop path. Tables already
-        at daily resolution (Prior/Post stats when write_stat_daily=True)
-        just have their own Date column parsed.
-        '''
-        table = table[[date_col] + value_cols].copy()
-        if len(table) == len(index_datetime):
-            table.index = index_datetime
-            table = (
-                table.reset_index()
-                .groupby("date", as_index=False)[value_cols]
-                .mean()
-            )
-        else:
-            if pd.api.types.is_datetime64_any_dtype(table[date_col]):
-                table[date_col] = pd.to_datetime(table[date_col])
-            else:
-                table[date_col] = pd.to_datetime(
-                    table[date_col], format="%d/%m/%Y-%H:%M"
-                )
-            table = table.rename(columns={date_col: "date"})
-        return table.set_index("date")
-
     # generate a DataFrame for each site and concatenate them
     df_sites=[]
     for site in sites:
@@ -283,12 +342,12 @@ def _process_cells_onlysites(
             # DA output: dict of DA_Results, OL_Sim, mean/std_Prior, mean/std_Post
             stat_daily = []
             for key in ["mean_Prior", "std_Prior", "mean_Post", "std_Post"]:
-                stat_df = _table_to_daily(cell[key], vars_to_save)
+                stat_df = _table_to_daily(cell[key], vars_to_save, index_datetime)
                 stat_df = stat_df.rename(columns={v: f"{v}_{key}" for v in vars_to_save})
                 stat_daily.append(stat_df)
 
             noise_cols = ["Prec_noise_mean", "Prec_noise_sd", "Ta_noise_mean", "Ta_noise_sd"]
-            stat_daily.append(_table_to_daily(cell["DA_Results"], noise_cols))
+            stat_daily.append(_table_to_daily(cell["DA_Results"], noise_cols, index_datetime))
 
             cell = pd.concat(stat_daily, axis=1).reset_index()
             cell["date"] = pd.to_datetime(cell["date"])

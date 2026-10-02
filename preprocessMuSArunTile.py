@@ -54,6 +54,7 @@ EXPERIMENT_CONFIG_KEYS = {
     "remove_output_cells": "remove_output_cells",
     "store_measurements": "store_measurements",
     "implementation": "implementation",
+    "parallelization": "parallelization",
     "tmp_path": "tmp_path",
     "save_ensemble": "save_ensemble",
     "write_stat_daily": "write_stat_daily",
@@ -150,6 +151,7 @@ class PrepareRunTile:
         date_end: str, end date for the simulation.
         snow_model: str, snow model to use.
         implementation: str, implementation type (e.g., "open_loop").
+        parallelization: str, MuSA parallelization scheme ("multiprocessing" or "HPC.array").
         model_only_sites: bool, flag to indicate if only model sites should be considered.
         remove_output_cells: bool, flag to indicate if output cells should be removed after the run
         store_measurements: str, path to xr dataset containing the in situ measurements (default: "/kyukon/data/gent/vo/000/gvo00090/SNOWSHOP/measurements/insitu/Alps_dataset_SD.nc")
@@ -196,6 +198,7 @@ class PrepareRunTile:
                  date_end:str,
                  snow_model:str,
                  implementation:str,
+                 parallelization:str,
                  model_only_sites:bool,
                  remove_output_cells:bool,
                  store_measurements:str,
@@ -225,6 +228,7 @@ class PrepareRunTile:
         self.date_end=date_end
         self.snow_model=snow_model
         self.implementation=implementation
+        self.parallelization=parallelization
         self.model_only_sites=model_only_sites
         self.remove_output_cells=remove_output_cells
         self.store_measurements=store_measurements
@@ -318,6 +322,7 @@ class PrepareRunTile:
                 date_ini=self.date_ini,
                 date_end=self.date_end,
                 implementation=self.implementation,
+                parallelization=self.parallelization,
                 model_only_sites=self.model_only_sites,
                 remove_output_cells=self.remove_output_cells,
                 store_measurements=self.store_measurements,
