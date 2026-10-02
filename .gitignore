@@ -148,3 +148,4 @@ logs/
 # loose figures in repo root (write to FIGURES_summerjob/<tile>/<type>/ instead)
 /*.png
 /*.pdf
+sites_*_split.csv
